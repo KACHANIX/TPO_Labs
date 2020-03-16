@@ -10,8 +10,4 @@
     <PackageReference Include="SpotifyAPI.Web.Auth" Version="5.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
-
 </Project>

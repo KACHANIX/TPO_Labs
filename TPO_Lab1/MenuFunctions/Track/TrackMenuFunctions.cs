@@ -4,7 +4,7 @@ using System.Linq;
 using TPO_Lab1.Functionality;
 using TPO_Lab1.Menus.BasicModelMenu;
 
-namespace TPO_Lab1.MenuFunctions
+namespace TPO_Lab1.MenuFunctions.Track
 {
     public class TrackMenuFunctions
     {
@@ -18,7 +18,7 @@ namespace TPO_Lab1.MenuFunctions
                 var menu = new BasicModelMenu();
                 menu.AddItem("Save Track", SaveTrack, "1", track.Id);
                 menu.AddItem("Remove Track From Saved", RemoveSavedTrack, "2", track.Id);
-                menu.AddItem("Exit", ExitFunction.Exit,"3", null);
+                menu.AddItem("Exit", ExitFunction.Exit, "3", null);
                 running = menu.Display();
             }
 
@@ -40,7 +40,7 @@ namespace TPO_Lab1.MenuFunctions
             var savedTracks = TracksFunctionality.GetSavedTracks();
             bool isSaved = savedTracks.Any(savedTrack => savedTrack.Id == trackId);
 
-            SpotifyApi.Spotify.RemoveSavedTracks(new List<string> { trackId });
+            SpotifyApi.Spotify.RemoveSavedTracks(new List<string> {trackId});
             return false;
         }
     }

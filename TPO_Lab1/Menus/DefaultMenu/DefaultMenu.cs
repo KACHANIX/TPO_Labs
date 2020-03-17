@@ -6,6 +6,7 @@ namespace TPO_Lab1.Menus.DefaultMenu
     public class DefaultMenu
     {
         private List<DefaultMenuItem> _items = new List<DefaultMenuItem>();
+
         public void AddItem(string title, Func<bool> action, string number)
         {
             var item = new DefaultMenuItem
@@ -16,6 +17,7 @@ namespace TPO_Lab1.Menus.DefaultMenu
             };
             _items.Add(item);
         }
+
         public bool Display()
         {
             int i = 1;
@@ -34,6 +36,7 @@ namespace TPO_Lab1.Menus.DefaultMenu
                     return item.Action();
                 }
             }
+
             return true;
         }
     }

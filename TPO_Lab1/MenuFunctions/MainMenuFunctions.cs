@@ -13,11 +13,19 @@ namespace TPO_Lab1.MenuFunctions
             {
                 running = tracksMenu.Display();
             }
+
             return true;
         }
 
         public static bool MainPlaylists()
         {
+            var playlistsMenu = MenuGenerator.GeneratePlaylistsMenu();
+            bool running = true;
+            while (running)
+            {
+                running = playlistsMenu.Display();
+            }
+
             return true;
         }
 
@@ -28,6 +36,13 @@ namespace TPO_Lab1.MenuFunctions
 
         public static bool MainAlbums()
         {
+            var albumsMenu = MenuGenerator.GenerateAlbumsMenu();
+            bool running = true;
+            while (running)
+            {
+                running = albumsMenu.Display();
+            }
+
             return true;
         }
     }

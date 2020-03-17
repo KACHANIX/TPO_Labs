@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using TPO_Lab1.Functionality;
+﻿using TPO_Lab1.Functionality;
 using TPO_Lab1.Menus;
 
-namespace TPO_Lab1.MenuFunctions
+namespace TPO_Lab1.MenuFunctions.Track
 {
     public static class TracksMenuFunctions
     {
         public static bool SavedTracks()
-        { 
+        {
             var savedTracks = TracksFunctionality.GetSavedTracks();
             var tracksMenu = MenuGenerator.GenerateTracks(savedTracks);
             bool running = true;
@@ -18,8 +14,10 @@ namespace TPO_Lab1.MenuFunctions
             {
                 running = tracksMenu.Display();
             }
+
             return true;
         }
+
         public static bool TopTracks()
         {
             var topTracks = TracksFunctionality.GetTopTracks();
@@ -29,8 +27,10 @@ namespace TPO_Lab1.MenuFunctions
             {
                 running = tracksMenu.Display();
             }
+
             return true;
         }
+
         public static bool RecentlyPlayedTracks()
         {
             var recentlyPlayedTracks = TracksFunctionality.GetRecentlyPlayedTracks();
@@ -40,6 +40,7 @@ namespace TPO_Lab1.MenuFunctions
             {
                 running = tracksMenu.Display();
             }
+
             return true;
         }
     }

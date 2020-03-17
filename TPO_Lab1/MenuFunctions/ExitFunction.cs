@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TPO_Lab1.MenuFunctions
+﻿namespace TPO_Lab1.MenuFunctions
 {
     public static class ExitFunction
     {
@@ -11,7 +7,7 @@ namespace TPO_Lab1.MenuFunctions
             return false;
         }
 
-        public static bool Exit(string n)
+        public static bool Exit(string _)
         {
             return false;
         }

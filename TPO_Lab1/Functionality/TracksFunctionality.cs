@@ -1,7 +1,5 @@
 ﻿using SpotifyAPI.Web.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using TPO_Lab1.Mappers;
 
 namespace TPO_Lab1.Functionality
@@ -11,14 +9,14 @@ namespace TPO_Lab1.Functionality
         public static List<FullTrack> GetSavedTracks()
         {
             var savedTracksPaging = SpotifyApi.Spotify.GetSavedTracks();
-            var savedTracks = TracksMapper.ToFullTracks(savedTracksPaging);
+            var savedTracks = TracksMapper.ToList(savedTracksPaging);
             return savedTracks;
         }
 
         public static List<FullTrack> GetTopTracks()
         {
             var topTracksPaging = SpotifyApi.Spotify.GetUsersTopTracks();
-            var topTracks = TracksMapper.ToFullTracks(topTracksPaging);
+            var topTracks = TracksMapper.ToList(topTracksPaging);
             return topTracks;
         }
 
@@ -26,7 +24,7 @@ namespace TPO_Lab1.Functionality
         {
             var playHistory = SpotifyApi.Spotify.GetUsersRecentlyPlayedTracks();
 
-            var topTracks = TracksMapper.ToSimpleTracks(playHistory);
+            var topTracks = TracksMapper.ToList(playHistory);
             return topTracks;
         }
 
@@ -35,6 +33,5 @@ namespace TPO_Lab1.Functionality
             var track = SpotifyApi.Spotify.GetTrack(trackId);
             return track;
         }
-         
     }
 }

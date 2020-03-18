@@ -6,24 +6,29 @@ namespace TPO_Lab1.Converters
 {
     public static class TracksConverter
     {
-        public static List<FullTrack> ToList(Paging<SavedTrack> savedTracks)
+        public static List<FullTrack> ToList(Paging<SavedTrack> tracks)
         {
-            return savedTracks.Items.Select(savedTracksItem => savedTracksItem.Track).ToList();
+            return tracks.Items.Select(savedTracksItem => savedTracksItem.Track).ToList();
         }
 
-        public static List<SimpleTrack> ToList(Paging<SimpleTrack> savedTracks)
+        public static List<SimpleTrack> ToList(Paging<SimpleTrack> tracks)
         {
-            return savedTracks.Items.Select(savedTracksItem => savedTracksItem).ToList();
+            return tracks.Items.Select(savedTracksItem => savedTracksItem).ToList();
         }
 
-        public static List<FullTrack> ToList(Paging<FullTrack> savedTracks)
+        public static List<FullTrack> ToList(Paging<FullTrack> tracks)
         {
-            return savedTracks.Items.Select(savedTracksItem => savedTracksItem).ToList();
+            return tracks.Items.Select(savedTracksItem => savedTracksItem).ToList();
         }
 
         public static List<SimpleTrack> ToList(CursorPaging<PlayHistory> history)
         {
             return history.Items.Select(playHistory => playHistory.Track).ToList();
+        }
+
+        public static List<FullTrack> ToList(Paging<PlaylistTrack> playlists)
+        {
+            return playlists.Items.Select(playlist => playlist.Track).ToList();
         }
     }
 }

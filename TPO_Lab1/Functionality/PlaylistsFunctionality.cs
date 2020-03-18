@@ -17,7 +17,7 @@ namespace TPO_Lab1.Functionality
             return filteredPlaylists;
         }
 
-        public static List<SimplePlaylist> CreatedPlaylists()
+        public static List<SimplePlaylist> GetCreatedPlaylists()
         {
             var createdPlaylists =
                 PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
@@ -27,7 +27,7 @@ namespace TPO_Lab1.Functionality
             return filteredPlaylists;
         }
 
-        public static List<SimplePlaylist> SpotifyFeaturedPlaylists()
+        public static List<SimplePlaylist> GetSpotifyFeaturedPlaylists()
         {
             var savedPlaylistsPaging = SpotifyApi.Spotify.GetFeaturedPlaylists().Playlists;
             var savedPlaylists = PlaylistsConverter.ToList(savedPlaylistsPaging);

@@ -18,7 +18,7 @@ namespace TPO_Lab1.MenuFunctions.Playlist
         }
         public static bool CreatedPlaylists()
         { 
-            var createdPlaylists = PlaylistsFunctionality.CreatedPlaylists();
+            var createdPlaylists = PlaylistsFunctionality.GetCreatedPlaylists();
             var playlistsMenu = MenuGenerator.GeneratePlaylists(createdPlaylists);
             bool running = true;
             while (running)
@@ -29,7 +29,7 @@ namespace TPO_Lab1.MenuFunctions.Playlist
         }
         public static bool SpotifyFeaturedPlaylists()
         {
-            var featuredPlaylists = PlaylistsFunctionality.SpotifyFeaturedPlaylists();
+            var featuredPlaylists = PlaylistsFunctionality.GetSpotifyFeaturedPlaylists();
             var playlistsMenu = MenuGenerator.GeneratePlaylists(featuredPlaylists);
             bool running = true;
             while (running)

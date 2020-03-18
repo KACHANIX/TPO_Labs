@@ -5,7 +5,7 @@ namespace TPO_Lab1.Menus.DefaultMenu
 {
     public class DefaultMenu
     {
-        private List<DefaultMenuItem> _items = new List<DefaultMenuItem>();
+        public List<DefaultMenuItem> _items = new List<DefaultMenuItem>();
 
         public void AddItem(string title, Func<bool> action, string number)
         {
@@ -22,11 +22,11 @@ namespace TPO_Lab1.Menus.DefaultMenu
         { 
             foreach (DefaultMenuItem item in _items)
             {
-                Console.WriteLine($"{item.Number}. {item.Title}");
+                IO.WriteLine($"{item.Number}. {item.Title}");
             }
 
-            Console.Write("Your input : ");
-            string input = Console.ReadLine();
+            IO.Write("Your input : ");
+            string input = IO.ReadLine();
 
             foreach (DefaultMenuItem item in _items)
             {

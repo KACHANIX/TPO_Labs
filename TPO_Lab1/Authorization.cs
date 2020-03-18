@@ -3,19 +3,26 @@ using SpotifyAPI.Web.Auth;
 using SpotifyAPI.Web.Enums;
 using SpotifyAPI.Web.Models;
 using System;
+using System.Threading;
 
 namespace TPO_Lab1
 {
     public static class Authorization
     {
-        public static SpotifyWebAPI Authorize(string clientId, string clientSecret, string redirectAndServerUri)
+        private const string ClientId = "c984c495a8b4421a94dedc40ba65944d";
+        private const string ClientSecret = "48d62f6b57a74e60825410e02f08c029";
+        private const string RedirectAndServerUri = "http://localhost:4002/";
+        private static bool _authReceived;
+         
+
+        public static SpotifyWebAPI Authorize()
         {
             SpotifyWebAPI api = new SpotifyWebAPI();
             AuthorizationCodeAuth auth = new AuthorizationCodeAuth(
-                clientId,
-                clientSecret,
-                redirectAndServerUri,
-                redirectAndServerUri,
+                ClientId,
+                ClientSecret,
+                RedirectAndServerUri,
+                RedirectAndServerUri,
                 Scope.PlaylistReadPrivate | Scope.PlaylistReadCollaborative | Scope.PlaylistReadPrivate |
                 Scope.PlaylistModifyPrivate | Scope.UserReadRecentlyPlayed | Scope.UserTopRead | Scope.UserFollowRead |
                 Scope.UserFollowModify | Scope.UserLibraryRead | Scope.UserLibraryModify
@@ -30,13 +37,19 @@ namespace TPO_Lab1
                     AccessToken = token.AccessToken
                 };
 
-                Console.Write("Authorization completed\nType any key to continue: ");
+                IO.Write("Authorization completed\nType any key to continue: ");
+                _authReceived = true;
             };
             auth.Start(); // Starts an internal HTTP Server
             auth.OpenBrowser();
+            while (!_authReceived)
+            {
+                Thread.Sleep(500);
+            }
 
-            Console.ReadKey();
-            Console.Clear();
+            //
+            IO.ReadKey();
+            IO.Clear();
             return api;
         }
     }

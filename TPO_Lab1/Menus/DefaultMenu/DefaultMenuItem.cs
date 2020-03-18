@@ -2,7 +2,7 @@
 
 namespace TPO_Lab1.Menus.DefaultMenu
 {
-    class DefaultMenuItem
+    public class DefaultMenuItem
     {
         public string Title;
         public Func<bool> Action;

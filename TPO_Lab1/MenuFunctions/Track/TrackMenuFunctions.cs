@@ -14,11 +14,11 @@ namespace TPO_Lab1.MenuFunctions.Track
             bool running = true;
             while (running)
             {
-                Console.WriteLine($"Author: {track.Artists[0].Name}\nTrack Name: {track.Name}");
+                IO.WriteLine($"Author: {track.Artists[0].Name}\nTrack Name: {track.Name}");
                 var menu = new BasicModelMenu();
                 menu.AddItem("Save Track", SaveTrack, "1", track.Id);
                 menu.AddItem("Remove Track From Saved", RemoveSavedTrack, "2", track.Id);
-                menu.AddItem("Exit", ExitFunction.Exit, "3", null);
+                menu.AddItem("Exit", ExitFunctions.Exit, "3", null);
                 running = menu.Display();
             }
 

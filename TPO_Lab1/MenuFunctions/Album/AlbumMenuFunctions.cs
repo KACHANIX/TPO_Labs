@@ -17,7 +17,7 @@ namespace TPO_Lab1.MenuFunctions.Album
             bool running = true;
             while (running)
             {
-                Console.WriteLine(
+                IO.WriteLine(
                     $"Artist: {album.Artists[0].Name}\nName: {album.Name}\nRelease date: {album.ReleaseDate}");
                 var menu = new BasicModelMenu();
                 int i = 1;
@@ -30,7 +30,7 @@ namespace TPO_Lab1.MenuFunctions.Album
 
                 menu.AddItem("Save Album", SaveAlbum, i++.ToString(), albumId);
                 menu.AddItem("Remove Saved Album", RemoveSavedAlbum, i++.ToString(), albumId);
-                menu.AddItem("Exit", ExitFunction.Exit, i++.ToString(), null);
+                menu.AddItem("Exit", ExitFunctions.Exit, i++.ToString(), null);
                 running = menu.Display();
             }
 

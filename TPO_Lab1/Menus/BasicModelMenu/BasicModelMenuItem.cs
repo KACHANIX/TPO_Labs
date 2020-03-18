@@ -2,7 +2,7 @@
 
 namespace TPO_Lab1.Menus.BasicModelMenu
 {
-    class BasicModelMenuItem
+    public class BasicModelMenuItem
     {
         public string Title;
         public Func<string, bool> Action;

@@ -1,6 +1,6 @@
 ﻿namespace TPO_Lab1.MenuFunctions
 {
-    public static class ExitFunction
+    public static class ExitFunctions
     {
         public static bool Exit()
         {

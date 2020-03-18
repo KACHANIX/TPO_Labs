@@ -12,11 +12,11 @@ namespace TPO_Lab1.MenuFunctions.Playlist
         public static bool GetPlaylist(string playlistId)
         {
             var playlist = PlaylistsFunctionality.GetParticularPlaylist(playlistId);
-            var playlistTracks = PlaylistsConverter.ToList(playlist.Tracks);
+            var playlistTracks = TracksConverter.ToList(playlist.Tracks);
             bool running = true;
             while (running)
             {
-                Console.WriteLine($"Author: {playlist.Owner.DisplayName}\nPlaylist Name: {playlist.Name}");
+                IO.WriteLine($"Author: {playlist.Owner.DisplayName}\nPlaylist Name: {playlist.Name}");
                 var menu = new BasicModelMenu();
                 int i = 1;
                 foreach (var playlistTrack in playlistTracks)
@@ -28,7 +28,7 @@ namespace TPO_Lab1.MenuFunctions.Playlist
 
                 menu.AddItem("Follow Playlist", FollowPlaylist, i++.ToString(), playlistId);
                 menu.AddItem("Unfollow Playlist", UnfollowPlaylist, i++.ToString(), playlistId);
-                menu.AddItem("Exit", ExitFunction.Exit, i.ToString(), null);
+                menu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
                 running = menu.Display();
             }
 

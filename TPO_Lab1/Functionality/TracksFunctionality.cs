@@ -24,8 +24,8 @@ namespace TPO_Lab1.Functionality
         {
             var playHistory = SpotifyApi.Spotify.GetUsersRecentlyPlayedTracks();
 
-            var topTracks = TracksConverter.ToList(playHistory);
-            return topTracks;
+            var historyTracks = TracksConverter.ToList(playHistory);
+            return historyTracks;
         }
 
         public static FullTrack GetParticularTrack(string trackId)

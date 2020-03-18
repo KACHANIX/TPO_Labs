@@ -7,7 +7,7 @@ using TPO_Lab1.Menus;
 
 namespace TPO_Lab1.MenuFunctions.Artist
 {
-    public static class ArtistMenuFunction
+    public static class ArtistMenuFunctions
     {
         public static bool GetArtist(string artistId)
         {
@@ -17,7 +17,7 @@ namespace TPO_Lab1.MenuFunctions.Artist
             bool running = true;
             while (running)
             {
-                Console.WriteLine(
+                IO.WriteLine(
                     $"Artist: {artist.Name}\nFollowers: {artist.Followers.Total}\nPopularity: {artist.Popularity}");
                 running = artistMenu.Display();
             }

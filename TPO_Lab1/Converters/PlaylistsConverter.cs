@@ -10,10 +10,5 @@ namespace TPO_Lab1.Converters
         {
             return playlists.Items.Select(playlist => playlist).ToList();
         }
-
-        public static List<FullTrack> ToList(Paging<PlaylistTrack> playlists)
-        {
-            return playlists.Items.Select(playlist => playlist.Track).ToList();
-        }
     }
 }

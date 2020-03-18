@@ -20,8 +20,7 @@ namespace TPO_Lab1.Menus.BasicModelMenu
         }
 
         public bool Display()
-        {
-            int i = 1;
+        { 
             foreach (BasicModelMenuItem item in _items)
             {
                 Console.WriteLine($"{item.Number}. {item.Title}");

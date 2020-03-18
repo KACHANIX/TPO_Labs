@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Threading;
+using TPO_Lab1.Converters;
 using TPO_Lab1.Functionality;
-using TPO_Lab1.Mappers;
 using TPO_Lab1.MenuFunctions.Track;
 using TPO_Lab1.Menus.BasicModelMenu;
 
 namespace TPO_Lab1.MenuFunctions.Playlist
 {
-    class PlaylistMenuFunctions
+    public static class PlaylistMenuFunctions
     {
         public static bool GetPlaylist(string playlistId)
         {
             var playlist = PlaylistsFunctionality.GetParticularPlaylist(playlistId);
-            var playlistTracks = PlaylistsMapper.ToList(playlist.Tracks);
+            var playlistTracks = PlaylistsConverter.ToList(playlist.Tracks);
             bool running = true;
             while (running)
             {
@@ -37,12 +38,18 @@ namespace TPO_Lab1.MenuFunctions.Playlist
         public static bool FollowPlaylist(string playlistId)
         {
             var playlistOwnerId = PlaylistsFunctionality.GetParticularPlaylist(playlistId).Owner.Id;
+            var isFollowing = SpotifyApi.Spotify.IsFollowingPlaylist(playlistId, SpotifyApi.CurrentUserId).List[0];
+            if (isFollowing)
+                throw new ArgumentException("Playlist is already followed.");
             SpotifyApi.Spotify.FollowPlaylist(playlistOwnerId, playlistId);
             return true;
         }
 
         public static bool UnfollowPlaylist(string playlistId)
         {
+            var isFollowing = SpotifyApi.Spotify.IsFollowingPlaylist(playlistId, SpotifyApi.CurrentUserId).List[0];
+            if (!isFollowing)
+                throw new ArgumentException("Playlist isn't followed.");
             SpotifyApi.Spotify.UnfollowPlaylist(playlistId);
             return true;
         }

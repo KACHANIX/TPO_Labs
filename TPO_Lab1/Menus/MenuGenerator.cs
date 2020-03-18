@@ -1,8 +1,10 @@
 ﻿using SpotifyAPI.Web.Models;
 using System;
 using System.Collections.Generic;
+using TPO_Lab1.Functionality;
 using TPO_Lab1.MenuFunctions;
 using TPO_Lab1.MenuFunctions.Album;
+using TPO_Lab1.MenuFunctions.Artist;
 using TPO_Lab1.MenuFunctions.Playlist;
 using TPO_Lab1.MenuFunctions.Track;
 
@@ -115,6 +117,37 @@ namespace TPO_Lab1.Menus
                 AlbumMenuFunctions.GetAlbum, i++.ToString(), simpleAlbum.Id));
             albumsMenu.AddItem("Exit", ExitFunction.Exit, i.ToString(), null);
             return albumsMenu;
+        }
+
+        public static DefaultMenu.DefaultMenu GenerateArtistsMenu()
+        {
+            var artistsMenu = new DefaultMenu.DefaultMenu();
+            artistsMenu.AddItem("Followed Artists", ArtistsMenuFunctions.FollowedArtists, "1");
+            artistsMenu.AddItem("Your Top Artists", ArtistsMenuFunctions.TopArtists, "2");
+            artistsMenu.AddItem("Exit", ExitFunction.Exit, "3");
+            return artistsMenu;
+        }
+
+        public static BasicModelMenu.BasicModelMenu GenerateArtists(List<FullArtist> followedArtists)
+        {
+            var artistsMenu = new BasicModelMenu.BasicModelMenu();
+            int i = 1;
+            followedArtists.ForEach(artist =>
+                artistsMenu.AddItem(artist.Name, ArtistMenuFunction.GetArtist, i++.ToString(), artist.Id));
+            artistsMenu.AddItem("Exit", ExitFunction.Exit, i.ToString(),null);
+            return artistsMenu;
+        }
+
+        public static BasicModelMenu.BasicModelMenu GenerateArtist(string artistId)
+        {
+            var artistMenu = new BasicModelMenu.BasicModelMenu();
+            artistMenu.AddItem($"Related Artists", ArtistMenuFunction.GetRelatedArtists, "1", artistId);
+            artistMenu.AddItem($"Artist's Top Tracks", ArtistMenuFunction.GetArtistTopTracks, "2", artistId);
+            artistMenu.AddItem($"Artist's Albums", ArtistMenuFunction.GetArtistsAlbums, "3", artistId);
+            artistMenu.AddItem($"Follow Artist", ArtistMenuFunction.FollowArtist, "4", artistId);
+            artistMenu.AddItem($"UnfollowArtist", ArtistMenuFunction.UnfollowArtist, "5", artistId);
+            artistMenu.AddItem($"Exit", ExitFunction.Exit, "6", null);
+            return artistMenu;
         }
     }
 }

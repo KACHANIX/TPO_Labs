@@ -6,7 +6,7 @@ using TPO_Lab1.Menus.BasicModelMenu;
 
 namespace TPO_Lab1.MenuFunctions.Track
 {
-    public class TrackMenuFunctions
+    public static class TrackMenuFunctions
     {
         public static bool GetTrack(string trackId)
         {
@@ -25,23 +25,25 @@ namespace TPO_Lab1.MenuFunctions.Track
             return true;
         }
 
+
         public static bool SaveTrack(string trackId)
         {
             var savedTracks = TracksFunctionality.GetSavedTracks();
             bool isSaved = savedTracks.Any(savedTrack => savedTrack.Id == trackId);
-
+            if (isSaved)
+                throw new ArgumentException("Track is already saved.");
             SpotifyApi.Spotify.SaveTrack(trackId);
-            return false;
+            return true;
         }
 
-        /// <returns>Returns false if track isn't saved.</returns>
         public static bool RemoveSavedTrack(string trackId)
         {
             var savedTracks = TracksFunctionality.GetSavedTracks();
             bool isSaved = savedTracks.Any(savedTrack => savedTrack.Id == trackId);
-
+            if (!isSaved)
+                throw new ArgumentException("Track isn't saved.");
             SpotifyApi.Spotify.RemoveSavedTracks(new List<string> {trackId});
-            return false;
+            return true;
         }
     }
 }

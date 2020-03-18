@@ -1,10 +1,10 @@
-﻿using SpotifyAPI.Web.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using SpotifyAPI.Web.Models;
 
-namespace TPO_Lab1.Mappers
+namespace TPO_Lab1.Converters
 {
-    class PlaylistsMapper
+    public static class PlaylistsConverter
     {
         public static List<SimplePlaylist> ToList(Paging<SimplePlaylist> playlists)
         {

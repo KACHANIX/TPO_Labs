@@ -19,8 +19,7 @@ namespace TPO_Lab1.Menus.DefaultMenu
         }
 
         public bool Display()
-        {
-            int i = 1;
+        { 
             foreach (DefaultMenuItem item in _items)
             {
                 Console.WriteLine($"{item.Number}. {item.Title}");

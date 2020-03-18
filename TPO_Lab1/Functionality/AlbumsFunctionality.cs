@@ -1,6 +1,6 @@
 ﻿using SpotifyAPI.Web.Models;
 using System.Collections.Generic;
-using TPO_Lab1.Mappers;
+using TPO_Lab1.Converters;
 
 namespace TPO_Lab1.Functionality
 {
@@ -9,13 +9,13 @@ namespace TPO_Lab1.Functionality
         public static List<FullAlbum> GetSavedAlbums()
         {
             var savedAlbums = SpotifyApi.Spotify.GetSavedAlbums();
-            return AlbumsMapper.ToList(savedAlbums);
+            return AlbumsConverter.ToList(savedAlbums);
         }
 
         public static List<SimpleAlbum> GetNewAlbumReleases()
         {
             var newAlbums = SpotifyApi.Spotify.GetNewAlbumReleases().Albums;
-            return AlbumsMapper.ToList(newAlbums);
+            return AlbumsConverter.ToList(newAlbums);
         }
 
         public static FullAlbum GetParticularAlbum(string albumId)

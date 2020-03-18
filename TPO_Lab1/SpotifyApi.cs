@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using SpotifyAPI.Web;
+﻿using SpotifyAPI.Web;
 
 namespace TPO_Lab1
 {

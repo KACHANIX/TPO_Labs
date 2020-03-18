@@ -13,11 +13,12 @@ namespace TPO_Lab1
             Console.WriteLine("\n\n\n\t\t\tHello, dear User!\n\n\n");
             var spotify = Authorization.Authorize(ClientId, ClientSecret, "http://localhost:4002/");
 
+            var privateProfile = spotify.GetPrivateProfile();
             SpotifyApi.Spotify = spotify;
-            SpotifyApi.CurrentUserId = spotify.GetPrivateProfile().Id;
+            SpotifyApi.CurrentUserId = privateProfile.Id;
 
-            string userName = spotify.GetPrivateProfile().DisplayName;
-            int followersCount = spotify.GetPrivateProfile().Followers.Total;
+            string userName = privateProfile.DisplayName;
+            int followersCount = privateProfile.Followers.Total;
 
             Console.WriteLine(
                 $"\n\t\t\tCongratulations with authorization, {userName}\n\t\t\t\t Your followers count: {followersCount}");

@@ -31,6 +31,12 @@ namespace TPO_Lab1.MenuFunctions
 
         public static bool MainArtists()
         {
+            var artistsMenu = MenuGenerator.GenerateArtistsMenu();
+            bool running = true;
+            while (running)
+            {
+                running = artistsMenu.Display();
+            }
             return true;
         }
 

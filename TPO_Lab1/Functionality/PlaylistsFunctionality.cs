@@ -1,7 +1,7 @@
 ﻿using SpotifyAPI.Web.Models;
 using System.Collections.Generic;
 using System.Linq;
-using TPO_Lab1.Mappers;
+using TPO_Lab1.Converters;
 
 namespace TPO_Lab1.Functionality
 {
@@ -10,7 +10,7 @@ namespace TPO_Lab1.Functionality
         public static List<SimplePlaylist> GetSavedPlaylists()
         {
             var savedPlaylists =
-                PlaylistsMapper.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
+                PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
             var filteredPlaylists = savedPlaylists.Select(playlist => playlist)
                 .Where(playlist => playlist.Owner.Id != SpotifyApi.CurrentUserId).ToList();
 
@@ -20,7 +20,7 @@ namespace TPO_Lab1.Functionality
         public static List<SimplePlaylist> CreatedPlaylists()
         {
             var createdPlaylists =
-                PlaylistsMapper.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
+                PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
             var filteredPlaylists = createdPlaylists.Select(playlist => playlist)
                 .Where(playlist => playlist.Owner.Id == SpotifyApi.CurrentUserId).ToList();
 
@@ -30,7 +30,7 @@ namespace TPO_Lab1.Functionality
         public static List<SimplePlaylist> SpotifyFeaturedPlaylists()
         {
             var savedPlaylistsPaging = SpotifyApi.Spotify.GetFeaturedPlaylists().Playlists;
-            var savedPlaylists = PlaylistsMapper.ToList(savedPlaylistsPaging);
+            var savedPlaylists = PlaylistsConverter.ToList(savedPlaylistsPaging);
 
             return savedPlaylists;
         }

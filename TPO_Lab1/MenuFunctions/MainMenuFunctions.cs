@@ -1,25 +1,68 @@
-﻿using TPO_Lab1.Menus;
+﻿using TPO_Lab1.MenuFunctions.Album;
+using TPO_Lab1.MenuFunctions.Artist;
+using TPO_Lab1.MenuFunctions.Playlist;
+using TPO_Lab1.MenuFunctions.Track;
+using TPO_Lab1.Menus.DefaultMenu;
 
 namespace TPO_Lab1.MenuFunctions
 {
-    public static class MainMenuFunctions
+    public class MainMenuFunctions
     {
-        public static bool MainTracks()
-        {
-            var tracksMenu = MenuGenerator.GenerateTracksMenu();
+        public TracksMenuFunctions TrackMenuFunctions { get; set; }
+        public PlaylistsMenuFunctions PlaylistsMenuFunctions { get; set; }
+        public ArtistsMenuFunctions ArtistsMenuFunctions { get; set; }
+        public AlbumsMenuFunctions AlbumsMenuFunctions { get; set; }
+        public ExitFunctions ExitFunctions { get; set; }
 
+        public MainMenuFunctions(TracksMenuFunctions trackMenuFunctions, PlaylistsMenuFunctions playlistsMenuFunctions,
+            ArtistsMenuFunctions artistsMenuFunctions, AlbumsMenuFunctions albumsMenuFunctions,
+            ExitFunctions exitFunctions)
+        {
+            TrackMenuFunctions = trackMenuFunctions;
+            PlaylistsMenuFunctions = playlistsMenuFunctions;
+            ArtistsMenuFunctions = artistsMenuFunctions;
+            AlbumsMenuFunctions = albumsMenuFunctions;
+            ExitFunctions = exitFunctions;
+        }
+
+
+        public bool MainAlbums()
+        {
+            var albumsMenu = new DefaultMenu();
+            albumsMenu.AddItem("Saved Albums", AlbumsMenuFunctions.SavedAlbums, "1");
+            albumsMenu.AddItem("New Album Releases", AlbumsMenuFunctions.NewAlbumReleases, "2");
+            albumsMenu.AddItem("Exit", ExitFunctions.Exit, "3");
             bool running = true;
             while (running)
             {
-                running = tracksMenu.Display();
+                running = albumsMenu.Display();
             }
 
             return true;
         }
 
-        public static bool MainPlaylists()
+        public bool MainArtists()
         {
-            var playlistsMenu = MenuGenerator.GeneratePlaylistsMenu();
+            var artistsMenu = new DefaultMenu();
+            artistsMenu.AddItem("Followed Artists", ArtistsMenuFunctions.FollowedArtists, "1");
+            artistsMenu.AddItem("Your Top Artists", ArtistsMenuFunctions.TopArtists, "2");
+            artistsMenu.AddItem("Exit", ExitFunctions.Exit, "3");
+            bool running = true;
+            while (running)
+            {
+                running = artistsMenu.Display();
+            }
+
+            return true;
+        }
+
+        public bool MainPlaylists()
+        {
+            var playlistsMenu = new DefaultMenu();
+            playlistsMenu.AddItem("Saved Playlists", PlaylistsMenuFunctions.SavedPlaylists, "1");
+            playlistsMenu.AddItem("Created Playlists", PlaylistsMenuFunctions.CreatedPlaylists, "2");
+            playlistsMenu.AddItem("Spotify Featured Playlists", PlaylistsMenuFunctions.SpotifyFeaturedPlaylists, "3");
+            playlistsMenu.AddItem("Exit", ExitFunctions.Exit, "4");
             bool running = true;
             while (running)
             {
@@ -29,24 +72,17 @@ namespace TPO_Lab1.MenuFunctions
             return true;
         }
 
-        public static bool MainArtists()
+        public bool MainTracks()
         {
-            var artistsMenu = MenuGenerator.GenerateArtistsMenu();
+            var tracksMenu = new DefaultMenu();
+            tracksMenu.AddItem("Saved Tracks", TrackMenuFunctions.SavedTracks, "1");
+            tracksMenu.AddItem("Top Tracks", TrackMenuFunctions.TopTracks, "2");
+            tracksMenu.AddItem("Recently Played Tracks", TrackMenuFunctions.RecentlyPlayedTracks, "3");
+            tracksMenu.AddItem("Exit", ExitFunctions.Exit, "4");
             bool running = true;
             while (running)
             {
-                running = artistsMenu.Display();
-            }
-            return true;
-        }
-
-        public static bool MainAlbums()
-        {
-            var albumsMenu = MenuGenerator.GenerateAlbumsMenu();
-            bool running = true;
-            while (running)
-            {
-                running = albumsMenu.Display();
+                running = tracksMenu.Display();
             }
 
             return true;

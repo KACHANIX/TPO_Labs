@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SpotifyAPI.Web.Models;
 using TPO_Lab1;
 using TPO_Lab1.Converters;
-using TPO_Lab1.Functionality;
+using TPO_Lab1.Utils;
 
 namespace TPO_Lab1_Tests.ConvertersTests
 {
@@ -26,7 +26,7 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_SimpleTracksPaging_ReturnsCorrectList()
         {
-            var albumTracksPaging = AlbumsFunctionality.GetParticularAlbum("3rqqwtJE89WoWvMyPTvbZc").Tracks;
+            var albumTracksPaging = AlbumsUtils.GetParticularAlbum("3rqqwtJE89WoWvMyPTvbZc").Tracks;
 
             var albumTracks = TracksConverter.ToList(albumTracksPaging);
 
@@ -46,7 +46,7 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_PlaylistTracksPaging_ReturnsCorrectList()
         {
-            var playlistTracksPaging = PlaylistsFunctionality.GetParticularPlaylist("0vvXsWCC9xrXsKd4FyS8kM").Tracks;
+            var playlistTracksPaging = PlaylistsUtils.GetParticularPlaylist("0vvXsWCC9xrXsKd4FyS8kM").Tracks;
 
             var playlistTracks = TracksConverter.ToList(playlistTracksPaging);
 

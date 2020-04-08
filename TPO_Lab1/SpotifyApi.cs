@@ -2,9 +2,9 @@
 
 namespace TPO_Lab1
 {
-    public static class SpotifyApi
+    public class SpotifyApi
     {
-        public static SpotifyWebAPI Spotify;
-        public static string CurrentUserId; 
+        public SpotifyWebAPI Spotify;
+        public string CurrentUserId; 
     }
 }

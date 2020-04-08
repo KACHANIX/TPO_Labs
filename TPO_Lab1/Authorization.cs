@@ -2,7 +2,6 @@
 using SpotifyAPI.Web.Auth;
 using SpotifyAPI.Web.Enums;
 using SpotifyAPI.Web.Models;
-using System;
 using System.Threading;
 
 namespace TPO_Lab1
@@ -13,7 +12,6 @@ namespace TPO_Lab1
         private const string ClientSecret = "48d62f6b57a74e60825410e02f08c029";
         private const string RedirectAndServerUri = "http://localhost:4002/";
         private static bool _authReceived;
-         
 
         public static SpotifyWebAPI Authorize()
         {
@@ -47,7 +45,6 @@ namespace TPO_Lab1
                 Thread.Sleep(500);
             }
 
-            //
             IO.ReadKey();
             IO.Clear();
             return api;

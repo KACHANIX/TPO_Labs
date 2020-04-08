@@ -1,14 +1,24 @@
-﻿using TPO_Lab1.Functionality;
-using TPO_Lab1.Menus;
+﻿using TPO_Lab1.Menus;
+using TPO_Lab1.Menus.Generators;
+using TPO_Lab1.Utils;
 
 namespace TPO_Lab1.MenuFunctions.Track
 {
-    public static class TracksMenuFunctions
+    public class TracksMenuFunctions
     {
-        public static bool SavedTracks()
+        public TracksUtils TracksUtils { get; set; }
+        public TracksGenerator TracksGenerator { get; set; }
+
+        public TracksMenuFunctions(TracksUtils tracksUtils, TracksGenerator tracksGenerator)
         {
-            var savedTracks = TracksFunctionality.GetSavedTracks();
-            var tracksMenu = MenuGenerator.GenerateTracks(savedTracks);
+            TracksUtils = tracksUtils;
+            TracksGenerator = tracksGenerator;
+        }
+
+        public bool SavedTracks()
+        {
+            var savedTracks = TracksUtils.GetSavedTracks();
+            var tracksMenu = TracksGenerator.GenerateTracks(savedTracks);
             bool running = true;
             while (running)
             {
@@ -18,10 +28,10 @@ namespace TPO_Lab1.MenuFunctions.Track
             return true;
         }
 
-        public static bool TopTracks()
+        public bool TopTracks()
         {
-            var topTracks = TracksFunctionality.GetTopTracks();
-            var tracksMenu = MenuGenerator.GenerateTracks(topTracks);
+            var topTracks = TracksUtils.GetTopTracks();
+            var tracksMenu = TracksGenerator.GenerateTracks(topTracks);
             bool running = true;
             while (running)
             {
@@ -31,10 +41,10 @@ namespace TPO_Lab1.MenuFunctions.Track
             return true;
         }
 
-        public static bool RecentlyPlayedTracks()
+        public bool RecentlyPlayedTracks()
         {
-            var recentlyPlayedTracks = TracksFunctionality.GetRecentlyPlayedTracks();
-            var tracksMenu = MenuGenerator.GenerateTracks(recentlyPlayedTracks);
+            var recentlyPlayedTracks = TracksUtils.GetRecentlyPlayedTracks();
+            var tracksMenu = TracksGenerator.GenerateTracks(recentlyPlayedTracks);
             bool running = true;
             while (running)
             {

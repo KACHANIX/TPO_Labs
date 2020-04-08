@@ -1,13 +1,13 @@
 ﻿namespace TPO_Lab1.MenuFunctions
 {
-    public static class ExitFunctions
+    public class ExitFunctions
     {
-        public static bool Exit()
+        public bool Exit()
         {
             return false;
         }
 
-        public static bool Exit(string _)
+        public bool Exit(string _)
         {
             return false;
         }

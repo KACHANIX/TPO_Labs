@@ -1,13 +1,22 @@
-﻿using SpotifyAPI.Web.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using SpotifyAPI.Web.Models;
 using TPO_Lab1.Converters;
 
-namespace TPO_Lab1.Functionality
+namespace TPO_Lab1.Utils
 {
-    public static class PlaylistsFunctionality
+    public class PlaylistsUtils
     {
-        public static List<SimplePlaylist> GetSavedPlaylists()
+        public PlaylistsConverter PlaylistsConverter { get; set; }
+        public SpotifyApi SpotifyApi { get; set; }
+
+        public PlaylistsUtils(PlaylistsConverter playlistsConverter, SpotifyApi spotifyApi)
+        {
+            PlaylistsConverter = playlistsConverter;
+            SpotifyApi = spotifyApi;
+        }
+
+        public List<SimplePlaylist> GetSavedPlaylists()
         {
             var savedPlaylists =
                 PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
@@ -17,7 +26,7 @@ namespace TPO_Lab1.Functionality
             return filteredPlaylists;
         }
 
-        public static List<SimplePlaylist> GetCreatedPlaylists()
+        public List<SimplePlaylist> GetCreatedPlaylists()
         {
             var createdPlaylists =
                 PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
@@ -27,7 +36,7 @@ namespace TPO_Lab1.Functionality
             return filteredPlaylists;
         }
 
-        public static List<SimplePlaylist> GetSpotifyFeaturedPlaylists()
+        public List<SimplePlaylist> GetSpotifyFeaturedPlaylists()
         {
             var savedPlaylistsPaging = SpotifyApi.Spotify.GetFeaturedPlaylists().Playlists;
             var savedPlaylists = PlaylistsConverter.ToList(savedPlaylistsPaging);
@@ -35,7 +44,7 @@ namespace TPO_Lab1.Functionality
             return savedPlaylists;
         }
 
-        public static FullPlaylist GetParticularPlaylist(string playlistId)
+        public FullPlaylist GetParticularPlaylist(string playlistId)
         {
             var playlist = SpotifyApi.Spotify.GetPlaylist(playlistId);
             return playlist;

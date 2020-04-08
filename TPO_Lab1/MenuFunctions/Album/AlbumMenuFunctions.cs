@@ -2,17 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using TPO_Lab1.Converters;
-using TPO_Lab1.Functionality;
 using TPO_Lab1.MenuFunctions.Track;
 using TPO_Lab1.Menus.BasicModelMenu;
+using TPO_Lab1.Utils;
 
 namespace TPO_Lab1.MenuFunctions.Album
 {
-    public static class AlbumMenuFunctions
+    public class AlbumMenuFunctions
     {
-        public static bool GetAlbum(string albumId)
+        public AlbumsUtils AlbumsUtils { get; set; }
+        public TracksConverter TracksConverter { get; set; }
+        public ExitFunctions ExitFunctions { get; set; }
+        public TrackMenuFunctions TrackMenuFunctions { get; set; }
+        public SpotifyApi SpotifyApi { get; set; }
+
+        public AlbumMenuFunctions(AlbumsUtils albumsUtils, TracksConverter tracksConverter, ExitFunctions exitFunctions,
+            TrackMenuFunctions trackMenuFunctions, SpotifyApi spotifyApi)
         {
-            var album = AlbumsFunctionality.GetParticularAlbum(albumId);
+            AlbumsUtils = albumsUtils;
+            TracksConverter = tracksConverter;
+            ExitFunctions = exitFunctions;
+            TrackMenuFunctions = trackMenuFunctions;
+            SpotifyApi = spotifyApi;
+        }
+
+        public bool GetAlbum(string albumId)
+        {
+            var album = AlbumsUtils.GetParticularAlbum(albumId);
             var albumTracks = TracksConverter.ToList(album.Tracks);
             bool running = true;
             while (running)
@@ -37,18 +53,18 @@ namespace TPO_Lab1.MenuFunctions.Album
             return true;
         }
 
-        public static bool SaveAlbum(string albumId)
+        public bool SaveAlbum(string albumId)
         {
-            bool isFollowed = AlbumsFunctionality.GetSavedAlbums().Any(album => album.Id == albumId);
+            bool isFollowed = AlbumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
             if (isFollowed)
                 throw new ArgumentException("Album is already saved.");
             SpotifyApi.Spotify.SaveAlbum(albumId);
             return true;
         }
 
-        public static bool RemoveSavedAlbum(string albumId)
+        public bool RemoveSavedAlbum(string albumId)
         {
-            bool isFollowed = AlbumsFunctionality.GetSavedAlbums().Any(album => album.Id == albumId);
+            bool isFollowed = AlbumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
             if (!isFollowed)
                 throw new ArgumentException("Album isn't saved.");
             SpotifyApi.Spotify.RemoveSavedAlbums(new List<string> {albumId});

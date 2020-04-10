@@ -7,21 +7,21 @@ namespace TPO_Lab1.Utils
 {
     public class PlaylistsUtils
     {
-        public PlaylistsConverter PlaylistsConverter { get; set; }
-        public SpotifyApi SpotifyApi { get; set; }
+        private readonly PlaylistsConverter _playlistsConverter;
+        private readonly SpotifyApi _spotifyApi;
 
         public PlaylistsUtils(PlaylistsConverter playlistsConverter, SpotifyApi spotifyApi)
         {
-            PlaylistsConverter = playlistsConverter;
-            SpotifyApi = spotifyApi;
+            _playlistsConverter = playlistsConverter;
+            _spotifyApi = spotifyApi;
         }
 
         public List<SimplePlaylist> GetSavedPlaylists()
         {
             var savedPlaylists =
-                PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
+                _playlistsConverter.ToList(_spotifyApi.Spotify.GetUserPlaylists(_spotifyApi.CurrentUserId));
             var filteredPlaylists = savedPlaylists.Select(playlist => playlist)
-                .Where(playlist => playlist.Owner.Id != SpotifyApi.CurrentUserId).ToList();
+                .Where(playlist => playlist.Owner.Id != _spotifyApi.CurrentUserId).ToList();
 
             return filteredPlaylists;
         }
@@ -29,24 +29,24 @@ namespace TPO_Lab1.Utils
         public List<SimplePlaylist> GetCreatedPlaylists()
         {
             var createdPlaylists =
-                PlaylistsConverter.ToList(SpotifyApi.Spotify.GetUserPlaylists(SpotifyApi.CurrentUserId));
+                _playlistsConverter.ToList(_spotifyApi.Spotify.GetUserPlaylists(_spotifyApi.CurrentUserId));
             var filteredPlaylists = createdPlaylists.Select(playlist => playlist)
-                .Where(playlist => playlist.Owner.Id == SpotifyApi.CurrentUserId).ToList();
+                .Where(playlist => playlist.Owner.Id == _spotifyApi.CurrentUserId).ToList();
 
             return filteredPlaylists;
         }
 
         public List<SimplePlaylist> GetSpotifyFeaturedPlaylists()
         {
-            var savedPlaylistsPaging = SpotifyApi.Spotify.GetFeaturedPlaylists().Playlists;
-            var savedPlaylists = PlaylistsConverter.ToList(savedPlaylistsPaging);
+            var savedPlaylistsPaging = _spotifyApi.Spotify.GetFeaturedPlaylists().Playlists;
+            var savedPlaylists = _playlistsConverter.ToList(savedPlaylistsPaging);
 
             return savedPlaylists;
         }
 
         public FullPlaylist GetParticularPlaylist(string playlistId)
         {
-            var playlist = SpotifyApi.Spotify.GetPlaylist(playlistId);
+            var playlist = _spotifyApi.Spotify.GetPlaylist(playlistId);
             return playlist;
         }
     }

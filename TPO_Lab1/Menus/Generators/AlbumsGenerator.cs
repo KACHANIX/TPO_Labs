@@ -1,7 +1,5 @@
-﻿using System;
+﻿using SpotifyAPI.Web.Models;
 using System.Collections.Generic;
-using System.Text;
-using SpotifyAPI.Web.Models;
 using TPO_Lab1.MenuFunctions;
 using TPO_Lab1.MenuFunctions.Album;
 
@@ -9,14 +7,14 @@ namespace TPO_Lab1.Menus.Generators
 {
     public class AlbumsGenerator
     {
-        public AlbumMenuFunctions AlbumMenuFunctions { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
+        private readonly AlbumMenuFunctions _albumMenuFunctions;
+        private readonly ExitFunctions _exitFunctions;
 
         public AlbumsGenerator(AlbumMenuFunctions albumMenuFunctions, ExitFunctions exitFunctions)
         {
-            AlbumMenuFunctions = albumMenuFunctions;
-            ExitFunctions = exitFunctions;
-        } 
+            _albumMenuFunctions = albumMenuFunctions;
+            _exitFunctions = exitFunctions;
+        }
 
         public BasicModelMenu.BasicModelMenu GenerateAlbums(List<SimpleAlbum> albumList)
         {
@@ -24,8 +22,8 @@ namespace TPO_Lab1.Menus.Generators
             int i = 1;
             albumList.ForEach(simpleAlbum => albumsMenu.AddItem(
                 $"{simpleAlbum.Artists[0].Name} - {simpleAlbum.Name}",
-                AlbumMenuFunctions.GetAlbum, i++.ToString(), simpleAlbum.Id));
-            albumsMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+                _albumMenuFunctions.GetAlbum, i++.ToString(), simpleAlbum.Id));
+            albumsMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return albumsMenu;
         }
 
@@ -35,8 +33,8 @@ namespace TPO_Lab1.Menus.Generators
             int i = 1;
             albumList.ForEach(simpleAlbum => albumsMenu.AddItem(
                 $"{simpleAlbum.Artists[0].Name} - {simpleAlbum.Name}",
-                AlbumMenuFunctions.GetAlbum, i++.ToString(), simpleAlbum.Id));
-            albumsMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+                _albumMenuFunctions.GetAlbum, i++.ToString(), simpleAlbum.Id));
+            albumsMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return albumsMenu;
         }
     }

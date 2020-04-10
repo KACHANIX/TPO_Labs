@@ -9,7 +9,7 @@ namespace TPO_Lab1
 {
     class Program
     {
-        private static IContainer _container { get; set; }
+        private static IContainer _container;
 
         public static void Main(string[] args)
         {

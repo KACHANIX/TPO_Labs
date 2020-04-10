@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SpotifyAPI.Web.Models;
-using TPO_Lab1;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TPO_Lab1.Converters;
-using TPO_Lab1.Utils;
 
 namespace TPO_Lab1_Tests.ConvertersTests
 {
     [TestClass]
     public class TracksConverterTests
     {
+        private readonly TracksConverter _tracksConverter;
+
+        public TracksConverterTests()
+        {
+            _tracksConverter = new TracksConverter();
+        }
         [TestMethod]
         public void ToList_SavedTracksPaging_ReturnsCorrectList()
         {
-            var savedTracksPaging = SpotifyApi.Spotify.GetSavedTracks();
+            var savedTracksPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetSavedTracks();
 
-            var savedTracks = TracksConverter.ToList(savedTracksPaging);
+            var savedTracks = _tracksConverter.ToList(savedTracksPaging);
 
             Assert.AreEqual(savedTracksPaging.Items.Count, savedTracks.Count);
         }
@@ -26,9 +26,9 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_SimpleTracksPaging_ReturnsCorrectList()
         {
-            var albumTracksPaging = AlbumsUtils.GetParticularAlbum("3rqqwtJE89WoWvMyPTvbZc").Tracks;
+            var albumTracksPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetAlbum("3rqqwtJE89WoWvMyPTvbZc").Tracks;
 
-            var albumTracks = TracksConverter.ToList(albumTracksPaging);
+            var albumTracks = _tracksConverter.ToList(albumTracksPaging);
 
             Assert.AreEqual(albumTracksPaging.Items.Count, albumTracks.Count);
         }
@@ -36,9 +36,9 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_FullTracksPaging_ReturnsCorrectList()
         {
-            var topTracksPaging = SpotifyApi.Spotify.GetUsersTopTracks();
+            var topTracksPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetUsersTopTracks();
 
-            var topTracks = TracksConverter.ToList(topTracksPaging);
+            var topTracks = _tracksConverter.ToList(topTracksPaging);
 
             Assert.AreEqual(topTracksPaging.Items.Count, topTracks.Count);
         }
@@ -46,9 +46,9 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_PlaylistTracksPaging_ReturnsCorrectList()
         {
-            var playlistTracksPaging = PlaylistsUtils.GetParticularPlaylist("0vvXsWCC9xrXsKd4FyS8kM").Tracks;
+            var playlistTracksPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetPlaylist("0vvXsWCC9xrXsKd4FyS8kM").Tracks;
 
-            var playlistTracks = TracksConverter.ToList(playlistTracksPaging);
+            var playlistTracks = _tracksConverter.ToList(playlistTracksPaging);
 
             Assert.AreEqual(playlistTracksPaging.Items.Count, playlistTracks.Count);
         }
@@ -56,9 +56,9 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_PlayHistoryCursorPaging_ReturnsCorrectList()
         {
-            var playHistory = SpotifyApi.Spotify.GetUsersRecentlyPlayedTracks();
+            var playHistory = GlobalTestInitializer.SpotifyApi.Spotify.GetUsersRecentlyPlayedTracks();
 
-            var historyTracks = TracksConverter.ToList(playHistory);
+            var historyTracks = _tracksConverter.ToList(playHistory);
 
             Assert.AreEqual(playHistory.Items.Count, historyTracks.Count);
         }

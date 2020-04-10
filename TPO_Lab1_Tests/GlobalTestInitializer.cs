@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TPO_Lab1;
 
 namespace TPO_Lab1_Tests
@@ -9,6 +7,7 @@ namespace TPO_Lab1_Tests
     [TestClass]
     class GlobalTestInitializer
     {
+        public static SpotifyApi SpotifyApi;
         [AssemblyInitialize()]
         public static void Initialize(TestContext tc)
         {
@@ -17,9 +16,20 @@ namespace TPO_Lab1_Tests
             IO.ReadKey = () => new ConsoleKeyInfo();
             IO.ReadLine = () => "string";
             IO.Clear = () => { };
-            SpotifyApi.Spotify = Authorization.Authorize();
-            var privateProfile = SpotifyApi.Spotify.GetPrivateProfile();
-            SpotifyApi.CurrentUserId = privateProfile.Id;
+
+            var a  = new SpotifyApi();
+            var spotifyApi = new SpotifyApi { Spotify = Authorization.Authorize() };
+            var privateProfile = spotifyApi.Spotify.GetPrivateProfile();
+            spotifyApi.CurrentUserId = privateProfile.Id;
+
+            SpotifyApi = spotifyApi;
+            // var builder = new ContainerBuilder();
+            // builder.RegisterConverters();
+            // builder.RegisterGenerators();
+            // builder.RegisterMenuFunctions();
+            // builder.RegisterUtils();
+            // builder.RegisterInstance(spotifyApi);
+            // _container = builder.Build();
         }
     }
 }

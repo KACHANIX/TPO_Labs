@@ -8,25 +8,25 @@ namespace TPO_Lab1.MenuFunctions.Playlist
 {
     public class PlaylistMenuFunctions
     {
-        public  PlaylistsUtils PlaylistsUtils { get; set; }
-        public TracksConverter TracksConverter { get; set; }
-        public TrackMenuFunctions TrackMenuFunctions { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
-        public SpotifyApi SpotifyApi { get; set; }
+        private readonly PlaylistsUtils _playlistsUtils;
+        private readonly TracksConverter _tracksConverter;
+        private readonly TrackMenuFunctions _trackMenuFunctions;
+        private readonly ExitFunctions _exitFunctions;
+        private readonly SpotifyApi _spotifyApi;
 
         public PlaylistMenuFunctions(TracksConverter tracksConverter, PlaylistsUtils playlistsUtils, TrackMenuFunctions trackMenuFunctions, ExitFunctions exitFunctions, SpotifyApi spotifyApi)
         {
-            TracksConverter = tracksConverter;
-            PlaylistsUtils = playlistsUtils;
-            TrackMenuFunctions = trackMenuFunctions;
-            ExitFunctions = exitFunctions;
-            SpotifyApi = spotifyApi;
+            _tracksConverter = tracksConverter;
+            _playlistsUtils = playlistsUtils;
+            _trackMenuFunctions = trackMenuFunctions;
+            _exitFunctions = exitFunctions;
+            _spotifyApi = spotifyApi;
         }
 
         public bool GetPlaylist(string playlistId)
         {
-            var playlist = PlaylistsUtils.GetParticularPlaylist(playlistId);
-            var playlistTracks = TracksConverter.ToList(playlist.Tracks);
+            var playlist = _playlistsUtils.GetParticularPlaylist(playlistId);
+            var playlistTracks = _tracksConverter.ToList(playlist.Tracks);
             bool running = true;
             while (running)
             {
@@ -37,12 +37,12 @@ namespace TPO_Lab1.MenuFunctions.Playlist
                 {
                     TimeSpan ts = TimeSpan.FromMilliseconds(playlistTrack.DurationMs);
                     menu.AddItem($"{playlistTrack.Artists[0].Name} - {playlistTrack.Name} {ts.Minutes}:{ts.Seconds}",
-                        TrackMenuFunctions.GetTrack, i++.ToString(), playlistTrack.Id);
+                        _trackMenuFunctions.GetTrack, i++.ToString(), playlistTrack.Id);
                 }
 
                 menu.AddItem("Follow Playlist", FollowPlaylist, i++.ToString(), playlistId);
                 menu.AddItem("Unfollow Playlist", UnfollowPlaylist, i++.ToString(), playlistId);
-                menu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+                menu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
                 running = menu.Display();
             }
 
@@ -51,20 +51,20 @@ namespace TPO_Lab1.MenuFunctions.Playlist
 
         public bool FollowPlaylist(string playlistId)
         {
-            var playlistOwnerId = PlaylistsUtils.GetParticularPlaylist(playlistId).Owner.Id;
-            var isFollowing = SpotifyApi.Spotify.IsFollowingPlaylist(playlistId, SpotifyApi.CurrentUserId).List[0];
+            var playlistOwnerId = _playlistsUtils.GetParticularPlaylist(playlistId).Owner.Id;
+            var isFollowing = _spotifyApi.Spotify.IsFollowingPlaylist(playlistId, _spotifyApi.CurrentUserId).List[0];
             if (isFollowing)
                 throw new ArgumentException("Playlist is already followed.");
-            SpotifyApi.Spotify.FollowPlaylist(playlistOwnerId, playlistId);
+            _spotifyApi.Spotify.FollowPlaylist(playlistOwnerId, playlistId);
             return true;
         }
 
         public bool UnfollowPlaylist(string playlistId)
         {
-            var isFollowing = SpotifyApi.Spotify.IsFollowingPlaylist(playlistId, SpotifyApi.CurrentUserId).List[0];
+            var isFollowing = _spotifyApi.Spotify.IsFollowingPlaylist(playlistId, _spotifyApi.CurrentUserId).List[0];
             if (!isFollowing)
                 throw new ArgumentException("Playlist isn't followed.");
-            SpotifyApi.Spotify.UnfollowPlaylist(playlistId);
+            _spotifyApi.Spotify.UnfollowPlaylist(playlistId);
             return true;
         }
     }

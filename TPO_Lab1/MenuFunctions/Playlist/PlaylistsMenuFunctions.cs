@@ -1,23 +1,21 @@
-﻿using System.Collections.Generic;
-using SpotifyAPI.Web.Models;
-using TPO_Lab1.Menus;
-using TPO_Lab1.Menus.Generators;
+﻿using SpotifyAPI.Web.Models;
+using System.Collections.Generic;
 using TPO_Lab1.Utils;
 
 namespace TPO_Lab1.MenuFunctions.Playlist
 {
     public class PlaylistsMenuFunctions
     {
-        public PlaylistsUtils PlaylistsUtils { get; set; }
-        public PlaylistMenuFunctions PlaylistMenuFunctions { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
+        private readonly PlaylistsUtils _playlistsUtils;
+        private readonly PlaylistMenuFunctions _playlistMenuFunctions;
+        private readonly ExitFunctions _exitFunctions;
 
         public PlaylistsMenuFunctions(PlaylistsUtils playlistsUtils, PlaylistMenuFunctions playlistMenuFunctions,
             ExitFunctions exitFunctions)
         {
-            PlaylistsUtils = playlistsUtils;
-            PlaylistMenuFunctions = playlistMenuFunctions;
-            ExitFunctions = exitFunctions;
+            _playlistsUtils = playlistsUtils;
+            _playlistMenuFunctions = playlistMenuFunctions;
+            _exitFunctions = exitFunctions;
         }
 
         public Menus.BasicModelMenu.BasicModelMenu GeneratePlaylists(List<SimplePlaylist> playlistList)
@@ -27,15 +25,15 @@ namespace TPO_Lab1.MenuFunctions.Playlist
             playlistList.ForEach(simplePlaylist =>
                 playlistsMenu.AddItem(
                     $"{simplePlaylist.Owner.DisplayName} - {simplePlaylist.Name}",
-                    PlaylistMenuFunctions.GetPlaylist, i++.ToString(), simplePlaylist.Id));
+                    _playlistMenuFunctions.GetPlaylist, i++.ToString(), simplePlaylist.Id));
 
-            playlistsMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+            playlistsMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return playlistsMenu;
         }
 
         public bool SavedPlaylists()
         {
-            var savedPlaylists = PlaylistsUtils.GetSavedPlaylists();
+            var savedPlaylists = _playlistsUtils.GetSavedPlaylists();
             var playlistsMenu = GeneratePlaylists(savedPlaylists);
             bool running = true;
             while (running)
@@ -48,7 +46,7 @@ namespace TPO_Lab1.MenuFunctions.Playlist
 
         public bool CreatedPlaylists()
         {
-            var createdPlaylists = PlaylistsUtils.GetCreatedPlaylists();
+            var createdPlaylists = _playlistsUtils.GetCreatedPlaylists();
             var playlistsMenu = GeneratePlaylists(createdPlaylists);
             bool running = true;
             while (running)
@@ -61,7 +59,7 @@ namespace TPO_Lab1.MenuFunctions.Playlist
 
         public bool SpotifyFeaturedPlaylists()
         {
-            var featuredPlaylists = PlaylistsUtils.GetSpotifyFeaturedPlaylists();
+            var featuredPlaylists = _playlistsUtils.GetSpotifyFeaturedPlaylists();
             var playlistsMenu = GeneratePlaylists(featuredPlaylists);
             bool running = true;
             while (running)

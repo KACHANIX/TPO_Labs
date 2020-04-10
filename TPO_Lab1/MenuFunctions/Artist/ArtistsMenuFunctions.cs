@@ -1,26 +1,23 @@
-﻿using System.Collections.Generic;
-using SpotifyAPI.Web.Models;
-using TPO_Lab1.Menus;
-using TPO_Lab1.Menus.Generators;
+﻿using TPO_Lab1.Menus.Generators;
 using TPO_Lab1.Utils;
 
 namespace TPO_Lab1.MenuFunctions.Artist
 {
     public class ArtistsMenuFunctions
     {
-        public ArtistsUtils ArtistsUtils { get; set; }
-        public ArtistsGenerator ArtistsGenerator { get; set; }
+        private readonly ArtistsUtils _artistsUtils;
+        private readonly ArtistsGenerator _artistsGenerator;
 
         public ArtistsMenuFunctions(ArtistsUtils artistsUtils, ArtistsGenerator menuGenerator)
         {
-            ArtistsUtils = artistsUtils;
-            ArtistsGenerator = menuGenerator;
+            _artistsUtils = artistsUtils;
+            _artistsGenerator = menuGenerator;
         }
 
         public bool FollowedArtists()
         {
-            var followedArtists = ArtistsUtils.GetFollowedArtists();
-            var artistsMenu = ArtistsGenerator.GenerateArtists(followedArtists);
+            var followedArtists = _artistsUtils.GetFollowedArtists();
+            var artistsMenu = _artistsGenerator.GenerateArtists(followedArtists);
             bool running = true;
             while (running)
             {
@@ -32,8 +29,8 @@ namespace TPO_Lab1.MenuFunctions.Artist
 
         public bool TopArtists()
         {
-            var userTopArtists = ArtistsUtils.GetTopArtists();
-            var artistsMenu = ArtistsGenerator.GenerateArtists(userTopArtists);
+            var userTopArtists = _artistsUtils.GetTopArtists();
+            var artistsMenu = _artistsGenerator.GenerateArtists(userTopArtists);
             bool running = true;
             while (running)
             {

@@ -1,24 +1,23 @@
-﻿using TPO_Lab1.Menus;
-using TPO_Lab1.Menus.Generators;
+﻿using TPO_Lab1.Menus.Generators;
 using TPO_Lab1.Utils;
 
 namespace TPO_Lab1.MenuFunctions.Track
 {
     public class TracksMenuFunctions
     {
-        public TracksUtils TracksUtils { get; set; }
-        public TracksGenerator TracksGenerator { get; set; }
+        private readonly TracksUtils _tracksUtils;
+        private readonly TracksGenerator _tracksGenerator;
 
         public TracksMenuFunctions(TracksUtils tracksUtils, TracksGenerator tracksGenerator)
         {
-            TracksUtils = tracksUtils;
-            TracksGenerator = tracksGenerator;
+            _tracksUtils = tracksUtils;
+            _tracksGenerator = tracksGenerator;
         }
 
         public bool SavedTracks()
         {
-            var savedTracks = TracksUtils.GetSavedTracks();
-            var tracksMenu = TracksGenerator.GenerateTracks(savedTracks);
+            var savedTracks = _tracksUtils.GetSavedTracks();
+            var tracksMenu = _tracksGenerator.GenerateTracks(savedTracks);
             bool running = true;
             while (running)
             {
@@ -30,8 +29,8 @@ namespace TPO_Lab1.MenuFunctions.Track
 
         public bool TopTracks()
         {
-            var topTracks = TracksUtils.GetTopTracks();
-            var tracksMenu = TracksGenerator.GenerateTracks(topTracks);
+            var topTracks = _tracksUtils.GetTopTracks();
+            var tracksMenu = _tracksGenerator.GenerateTracks(topTracks);
             bool running = true;
             while (running)
             {
@@ -43,8 +42,8 @@ namespace TPO_Lab1.MenuFunctions.Track
 
         public bool RecentlyPlayedTracks()
         {
-            var recentlyPlayedTracks = TracksUtils.GetRecentlyPlayedTracks();
-            var tracksMenu = TracksGenerator.GenerateTracks(recentlyPlayedTracks);
+            var recentlyPlayedTracks = _tracksUtils.GetRecentlyPlayedTracks();
+            var tracksMenu = _tracksGenerator.GenerateTracks(recentlyPlayedTracks);
             bool running = true;
             while (running)
             {

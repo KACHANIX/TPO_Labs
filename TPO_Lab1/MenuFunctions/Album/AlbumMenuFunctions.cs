@@ -10,26 +10,25 @@ namespace TPO_Lab1.MenuFunctions.Album
 {
     public class AlbumMenuFunctions
     {
-        public AlbumsUtils AlbumsUtils { get; set; }
-        public TracksConverter TracksConverter { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
-        public TrackMenuFunctions TrackMenuFunctions { get; set; }
-        public SpotifyApi SpotifyApi { get; set; }
-
+        private readonly AlbumsUtils _albumsUtils;
+        private readonly TracksConverter _tracksConverter;
+        private readonly ExitFunctions _exitFunctions;
+        private readonly TrackMenuFunctions _trackMenuFunctions;
+        private readonly SpotifyApi _spotifyApi;
         public AlbumMenuFunctions(AlbumsUtils albumsUtils, TracksConverter tracksConverter, ExitFunctions exitFunctions,
             TrackMenuFunctions trackMenuFunctions, SpotifyApi spotifyApi)
         {
-            AlbumsUtils = albumsUtils;
-            TracksConverter = tracksConverter;
-            ExitFunctions = exitFunctions;
-            TrackMenuFunctions = trackMenuFunctions;
-            SpotifyApi = spotifyApi;
+            _albumsUtils = albumsUtils;
+            _tracksConverter = tracksConverter;
+            _exitFunctions = exitFunctions;
+            _trackMenuFunctions = trackMenuFunctions;
+            _spotifyApi = spotifyApi;
         }
 
         public bool GetAlbum(string albumId)
         {
-            var album = AlbumsUtils.GetParticularAlbum(albumId);
-            var albumTracks = TracksConverter.ToList(album.Tracks);
+            var album = _albumsUtils.GetParticularAlbum(albumId);
+            var albumTracks = _tracksConverter.ToList(album.Tracks);
             bool running = true;
             while (running)
             {
@@ -41,12 +40,12 @@ namespace TPO_Lab1.MenuFunctions.Album
                 {
                     TimeSpan ts = TimeSpan.FromMilliseconds(playlistTrack.DurationMs);
                     menu.AddItem($"{playlistTrack.Name} {ts.Minutes}:{ts.Seconds}",
-                        TrackMenuFunctions.GetTrack, i++.ToString(), playlistTrack.Id);
+                        _trackMenuFunctions.GetTrack, i++.ToString(), playlistTrack.Id);
                 }
 
                 menu.AddItem("Save Album", SaveAlbum, i++.ToString(), albumId);
                 menu.AddItem("Remove Saved Album", RemoveSavedAlbum, i++.ToString(), albumId);
-                menu.AddItem("Exit", ExitFunctions.Exit, i++.ToString(), null);
+                menu.AddItem("Exit", _exitFunctions.Exit, i++.ToString(), null);
                 running = menu.Display();
             }
 
@@ -55,19 +54,19 @@ namespace TPO_Lab1.MenuFunctions.Album
 
         public bool SaveAlbum(string albumId)
         {
-            bool isFollowed = AlbumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
+            bool isFollowed = _albumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
             if (isFollowed)
                 throw new ArgumentException("Album is already saved.");
-            SpotifyApi.Spotify.SaveAlbum(albumId);
+            _spotifyApi.Spotify.SaveAlbum(albumId);
             return true;
         }
 
         public bool RemoveSavedAlbum(string albumId)
         {
-            bool isFollowed = AlbumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
+            bool isFollowed = _albumsUtils.GetSavedAlbums().Any(album => album.Id == albumId);
             if (!isFollowed)
                 throw new ArgumentException("Album isn't saved.");
-            SpotifyApi.Spotify.RemoveSavedAlbums(new List<string> {albumId});
+            _spotifyApi.Spotify.RemoveSavedAlbums(new List<string> {albumId});
             return true;
         }
     }

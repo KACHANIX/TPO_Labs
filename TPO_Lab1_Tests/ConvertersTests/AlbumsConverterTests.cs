@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SpotifyAPI.Web.Models;
-using TPO_Lab1;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TPO_Lab1.Converters;
-using Authorization = TPO_Lab1.Authorization;
 
 namespace TPO_Lab1_Tests.ConvertersTests
 {
     [TestClass]
     public class AlbumsConverterTests
     {
+        private readonly AlbumsConverter _albumsConverter;
+        public AlbumsConverterTests()
+        {
+            _albumsConverter = new AlbumsConverter(); 
+        }
+
         [TestMethod]
         public void ToList_SavedAlbumsPaging_ReturnsCorrectList()
         {
-            var savedAlbumsPaging = SpotifyApi.Spotify.GetSavedAlbums();
 
-            var savedAlbums = AlbumsConverter.ToList(savedAlbumsPaging);
+            var savedAlbumsPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetSavedAlbums();
+
+            var savedAlbums = _albumsConverter.ToList(savedAlbumsPaging);
 
             Assert.AreEqual(savedAlbumsPaging.Items.Count, savedAlbums.Count);
         }
@@ -26,9 +26,9 @@ namespace TPO_Lab1_Tests.ConvertersTests
         [TestMethod]
         public void ToList_SimpleAlbumsPaging_ReturnsCorrectList()
         {
-            var newAlbumsPaging = SpotifyApi.Spotify.GetNewAlbumReleases().Albums;
+            var newAlbumsPaging = GlobalTestInitializer.SpotifyApi.Spotify.GetNewAlbumReleases().Albums;
 
-            var newAlbums = AlbumsConverter.ToList(newAlbumsPaging);
+            var newAlbums = _albumsConverter.ToList(newAlbumsPaging);
 
             Assert.AreEqual(newAlbumsPaging.Items.Count, newAlbums.Count);
         }

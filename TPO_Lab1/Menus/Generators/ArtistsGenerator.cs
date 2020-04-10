@@ -1,20 +1,19 @@
-﻿using System;
+﻿using SpotifyAPI.Web.Models;
 using System.Collections.Generic;
-using System.Text;
-using SpotifyAPI.Web.Models;
 using TPO_Lab1.MenuFunctions;
 using TPO_Lab1.MenuFunctions.Artist;
 
 namespace TPO_Lab1.Menus.Generators
 {
     public class ArtistsGenerator
-    { 
-        public ExitFunctions ExitFunctions { get; set; }
-        public ArtistMenuFunctions ArtistMenuFunctions { get; set; }
+    {
+        private readonly ExitFunctions _exitFunctions;
+        private readonly ArtistMenuFunctions _artistMenuFunctions;
+
         public ArtistsGenerator(ExitFunctions exitFunctions, ArtistMenuFunctions artistMenuFunctions)
         {
-            ExitFunctions = exitFunctions;
-            ArtistMenuFunctions = artistMenuFunctions;
+            _exitFunctions = exitFunctions;
+            _artistMenuFunctions = artistMenuFunctions;
         }
 
         public BasicModelMenu.BasicModelMenu GenerateArtists(List<FullArtist> followedArtists)
@@ -22,8 +21,8 @@ namespace TPO_Lab1.Menus.Generators
             var artistsMenu = new BasicModelMenu.BasicModelMenu();
             int i = 1;
             followedArtists.ForEach(artist =>
-                artistsMenu.AddItem(artist.Name, ArtistMenuFunctions.GetArtist, i++.ToString(), artist.Id));
-            artistsMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+                artistsMenu.AddItem(artist.Name, _artistMenuFunctions.GetArtist, i++.ToString(), artist.Id));
+            artistsMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return artistsMenu;
         }
     }

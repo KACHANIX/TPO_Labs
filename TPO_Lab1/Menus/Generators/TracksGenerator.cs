@@ -8,13 +8,13 @@ namespace TPO_Lab1.Menus.Generators
 {
     public class TracksGenerator
     {
-        public TrackMenuFunctions TrackMenuFunctions { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
+        private readonly TrackMenuFunctions _trackMenuFunctions;
+        private readonly ExitFunctions _exitFunctions;
 
         public TracksGenerator(TrackMenuFunctions trackMenuFunctions, ExitFunctions exitFunctions)
         {
-            TrackMenuFunctions = trackMenuFunctions;
-            ExitFunctions = exitFunctions;
+            _trackMenuFunctions = trackMenuFunctions;
+            _exitFunctions = exitFunctions;
         }
 
         public BasicModelMenu.BasicModelMenu GenerateTracks(List<FullTrack> trackList)
@@ -26,10 +26,10 @@ namespace TPO_Lab1.Menus.Generators
                 var ts = TimeSpan.FromMilliseconds(fullTrack.DurationMs);
                 tracksMenu.AddItem(
                     $"{fullTrack.Artists[0].Name} - {fullTrack.Name} {ts.Minutes}:{ts.Seconds}",
-                    TrackMenuFunctions.GetTrack, i++.ToString(), fullTrack.Id);
+                    _trackMenuFunctions.GetTrack, i++.ToString(), fullTrack.Id);
             });
 
-            tracksMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+            tracksMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return tracksMenu;
         }
 
@@ -42,10 +42,10 @@ namespace TPO_Lab1.Menus.Generators
                 var ts = TimeSpan.FromMilliseconds(fullTrack.DurationMs);
                 tracksMenu.AddItem(
                     $"{fullTrack.Artists[0].Name} - {fullTrack.Name} {ts.Minutes}:{ts.Seconds}",
-                    TrackMenuFunctions.GetTrack, i++.ToString(), fullTrack.Id);
+                    _trackMenuFunctions.GetTrack, i++.ToString(), fullTrack.Id);
             });
 
-            tracksMenu.AddItem("Exit", ExitFunctions.Exit, i.ToString(), null);
+            tracksMenu.AddItem("Exit", _exitFunctions.Exit, i.ToString(), null);
             return tracksMenu;
         }
     }

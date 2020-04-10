@@ -8,30 +8,30 @@ namespace TPO_Lab1.MenuFunctions
 {
     public class MainMenuFunctions
     {
-        public TracksMenuFunctions TrackMenuFunctions { get; set; }
-        public PlaylistsMenuFunctions PlaylistsMenuFunctions { get; set; }
-        public ArtistsMenuFunctions ArtistsMenuFunctions { get; set; }
-        public AlbumsMenuFunctions AlbumsMenuFunctions { get; set; }
-        public ExitFunctions ExitFunctions { get; set; }
+        private readonly TracksMenuFunctions _trackMenuFunctions;
+        private readonly PlaylistsMenuFunctions _playlistsMenuFunctions;
+        private readonly ArtistsMenuFunctions _artistsMenuFunctions;
+        private readonly AlbumsMenuFunctions _albumsMenuFunctions;
+        private readonly ExitFunctions _exitFunctions;
 
         public MainMenuFunctions(TracksMenuFunctions trackMenuFunctions, PlaylistsMenuFunctions playlistsMenuFunctions,
             ArtistsMenuFunctions artistsMenuFunctions, AlbumsMenuFunctions albumsMenuFunctions,
             ExitFunctions exitFunctions)
         {
-            TrackMenuFunctions = trackMenuFunctions;
-            PlaylistsMenuFunctions = playlistsMenuFunctions;
-            ArtistsMenuFunctions = artistsMenuFunctions;
-            AlbumsMenuFunctions = albumsMenuFunctions;
-            ExitFunctions = exitFunctions;
+            _trackMenuFunctions = trackMenuFunctions;
+            _playlistsMenuFunctions = playlistsMenuFunctions;
+            _artistsMenuFunctions = artistsMenuFunctions;
+            _albumsMenuFunctions = albumsMenuFunctions;
+            _exitFunctions = exitFunctions;
         }
 
 
         public bool MainAlbums()
         {
             var albumsMenu = new DefaultMenu();
-            albumsMenu.AddItem("Saved Albums", AlbumsMenuFunctions.SavedAlbums, "1");
-            albumsMenu.AddItem("New Album Releases", AlbumsMenuFunctions.NewAlbumReleases, "2");
-            albumsMenu.AddItem("Exit", ExitFunctions.Exit, "3");
+            albumsMenu.AddItem("Saved Albums", _albumsMenuFunctions.SavedAlbums, "1");
+            albumsMenu.AddItem("New Album Releases", _albumsMenuFunctions.NewAlbumReleases, "2");
+            albumsMenu.AddItem("Exit", _exitFunctions.Exit, "3");
             bool running = true;
             while (running)
             {
@@ -44,9 +44,9 @@ namespace TPO_Lab1.MenuFunctions
         public bool MainArtists()
         {
             var artistsMenu = new DefaultMenu();
-            artistsMenu.AddItem("Followed Artists", ArtistsMenuFunctions.FollowedArtists, "1");
-            artistsMenu.AddItem("Your Top Artists", ArtistsMenuFunctions.TopArtists, "2");
-            artistsMenu.AddItem("Exit", ExitFunctions.Exit, "3");
+            artistsMenu.AddItem("Followed Artists", _artistsMenuFunctions.FollowedArtists, "1");
+            artistsMenu.AddItem("Your Top Artists", _artistsMenuFunctions.TopArtists, "2");
+            artistsMenu.AddItem("Exit", _exitFunctions.Exit, "3");
             bool running = true;
             while (running)
             {
@@ -59,10 +59,10 @@ namespace TPO_Lab1.MenuFunctions
         public bool MainPlaylists()
         {
             var playlistsMenu = new DefaultMenu();
-            playlistsMenu.AddItem("Saved Playlists", PlaylistsMenuFunctions.SavedPlaylists, "1");
-            playlistsMenu.AddItem("Created Playlists", PlaylistsMenuFunctions.CreatedPlaylists, "2");
-            playlistsMenu.AddItem("Spotify Featured Playlists", PlaylistsMenuFunctions.SpotifyFeaturedPlaylists, "3");
-            playlistsMenu.AddItem("Exit", ExitFunctions.Exit, "4");
+            playlistsMenu.AddItem("Saved Playlists", _playlistsMenuFunctions.SavedPlaylists, "1");
+            playlistsMenu.AddItem("Created Playlists", _playlistsMenuFunctions.CreatedPlaylists, "2");
+            playlistsMenu.AddItem("Spotify Featured Playlists", _playlistsMenuFunctions.SpotifyFeaturedPlaylists, "3");
+            playlistsMenu.AddItem("Exit", _exitFunctions.Exit, "4");
             bool running = true;
             while (running)
             {
@@ -75,10 +75,10 @@ namespace TPO_Lab1.MenuFunctions
         public bool MainTracks()
         {
             var tracksMenu = new DefaultMenu();
-            tracksMenu.AddItem("Saved Tracks", TrackMenuFunctions.SavedTracks, "1");
-            tracksMenu.AddItem("Top Tracks", TrackMenuFunctions.TopTracks, "2");
-            tracksMenu.AddItem("Recently Played Tracks", TrackMenuFunctions.RecentlyPlayedTracks, "3");
-            tracksMenu.AddItem("Exit", ExitFunctions.Exit, "4");
+            tracksMenu.AddItem("Saved Tracks", _trackMenuFunctions.SavedTracks, "1");
+            tracksMenu.AddItem("Top Tracks", _trackMenuFunctions.TopTracks, "2");
+            tracksMenu.AddItem("Recently Played Tracks", _trackMenuFunctions.RecentlyPlayedTracks, "3");
+            tracksMenu.AddItem("Exit", _exitFunctions.Exit, "4");
             bool running = true;
             while (running)
             {

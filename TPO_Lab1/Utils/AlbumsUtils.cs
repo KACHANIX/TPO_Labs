@@ -6,28 +6,30 @@ namespace TPO_Lab1.Utils
 {
     public class AlbumsUtils
     {
-        public SpotifyApi SpotifyApi { get; set; }
-        public AlbumsConverter AlbumConverter { get; set; }
+        private readonly SpotifyApi _spotifyApi;
+        private readonly AlbumsConverter _albumConverter;
+
         public AlbumsUtils(AlbumsConverter albumConverter, SpotifyApi spotifyApi)
         {
-            AlbumConverter = albumConverter;
-            SpotifyApi = spotifyApi;
+            _albumConverter = albumConverter;
+            _spotifyApi = spotifyApi;
         }
+
         public List<FullAlbum> GetSavedAlbums()
         {
-            var savedAlbums = SpotifyApi.Spotify.GetSavedAlbums();
-            return AlbumConverter.ToList(savedAlbums);
+            var savedAlbums = _spotifyApi.Spotify.GetSavedAlbums();
+            return _albumConverter.ToList(savedAlbums);
         }
 
         public List<SimpleAlbum> GetNewAlbumReleases()
         {
-            var newAlbums = SpotifyApi.Spotify.GetNewAlbumReleases().Albums;
-            return AlbumConverter.ToList(newAlbums);
+            var newAlbums = _spotifyApi.Spotify.GetNewAlbumReleases().Albums;
+            return _albumConverter.ToList(newAlbums);
         }
 
         public FullAlbum GetParticularAlbum(string albumId)
         {
-            return SpotifyApi.Spotify.GetAlbum(albumId);
+            return _spotifyApi.Spotify.GetAlbum(albumId);
         }
     }
 }

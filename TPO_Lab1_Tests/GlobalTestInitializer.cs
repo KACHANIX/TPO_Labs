@@ -22,14 +22,7 @@ namespace TPO_Lab1_Tests
             var privateProfile = spotifyApi.Spotify.GetPrivateProfile();
             spotifyApi.CurrentUserId = privateProfile.Id;
 
-            SpotifyApi = spotifyApi;
-            // var builder = new ContainerBuilder();
-            // builder.RegisterConverters();
-            // builder.RegisterGenerators();
-            // builder.RegisterMenuFunctions();
-            // builder.RegisterUtils();
-            // builder.RegisterInstance(spotifyApi);
-            // _container = builder.Build();
+            SpotifyApi = spotifyApi; 
         }
     }
 }

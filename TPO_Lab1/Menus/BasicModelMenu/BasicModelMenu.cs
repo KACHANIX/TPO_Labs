@@ -5,7 +5,7 @@ namespace TPO_Lab1.Menus.BasicModelMenu
 {
     public class BasicModelMenu
     {
-        public List<BasicModelMenuItem> _items = new List<BasicModelMenuItem>();
+        public List<BasicModelMenuItem> items = new List<BasicModelMenuItem>();
 
         public void AddItem(string title, Func<string, bool> action, string number, string id)
         {
@@ -16,12 +16,12 @@ namespace TPO_Lab1.Menus.BasicModelMenu
                 Number = number,
                 Id = id
             };
-            _items.Add(item);
+            items.Add(item);
         }
 
         public bool Display()
         { 
-            foreach (BasicModelMenuItem item in _items)
+            foreach (BasicModelMenuItem item in items)
             {
                 IO.WriteLine($"{item.Number}. {item.Title}");
             }
@@ -29,7 +29,7 @@ namespace TPO_Lab1.Menus.BasicModelMenu
             IO.Write("Your input : ");
             string input = IO.ReadLine();
 
-            foreach (BasicModelMenuItem item in _items)
+            foreach (BasicModelMenuItem item in items)
             {
                 if (item.Number == input)
                 {

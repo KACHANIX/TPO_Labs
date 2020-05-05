@@ -43,7 +43,7 @@ namespace TPO_Lab1_Tests.MenuFunctionsTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void UnfollowUnfollowedArtist_ThrowsException()
+        public void UnfollowUnFollowedArtist_ThrowsException()
         {
             _artistMenuFunctions.UnfollowArtist("3jK9MiCrA42lLAdMGUZpwa");
         }

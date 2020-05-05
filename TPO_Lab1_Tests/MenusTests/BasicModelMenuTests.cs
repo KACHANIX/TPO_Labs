@@ -12,7 +12,7 @@ namespace TPO_Lab1_Tests.MenusTests
         {
             var menu = new BasicModelMenu();
             menu.AddItem(null, (a) => true, null, null);
-            Assert.AreEqual(1, menu._items.Count);
+            Assert.AreEqual(1, menu.items.Count);
         }
 
         [TestMethod]

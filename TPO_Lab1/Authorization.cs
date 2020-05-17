@@ -10,7 +10,7 @@ namespace TPO_Lab1
     {
         private const string ClientId = "c984c495a8b4421a94dedc40ba65944d";
         private const string ClientSecret = "48d62f6b57a74e60825410e02f08c029";
-        private const string RedirectAndServerUri = "http://localhost:4002/";
+        private const string RedirectAndServerUri = "http://localhost:8888";
         private static bool _authReceived;
 
         public static SpotifyWebAPI Authorize()

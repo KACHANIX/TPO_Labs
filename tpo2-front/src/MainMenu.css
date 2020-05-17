@@ -1,0 +1,17 @@
+
+#main-menu-block {
+    margin-top: 250px;
+    width: 600px;
+    height: 400px;
+    border: 8px solid #4FC3F7;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.links-line {
+    margin-top: 100px;
+}
+
+.link {
+    margin-left: 100px;
+}

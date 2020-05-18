@@ -1,0 +1,21 @@
+import React, {Component} from "react";
+import Song from "./Song";
+
+class SongList extends Component {
+    constructor(props){
+        super(props);
+        var a = props.songs[0];
+        console.log(props.songs)
+    }
+    render() {
+        return (
+            <div id='govnoebanoe'>
+                {this.props.songs.map((song) => {
+                    return <Song name={song.name} artist={song.artists[0].name} duration={song.duration} id={song.id}/>
+                })}
+            </div>
+        )
+    }
+}
+
+export default SongList;

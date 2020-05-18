@@ -1,0 +1,22 @@
+#song{
+    margin-top: 20px;
+    align-content: center;
+    width: 1000px;
+    height: 70px;
+    border: 6px solid #4FC3F7;
+    border-radius: 20px;
+}
+
+#track-def{
+    font-size: 20px;
+    display: flex;
+    margin-left: 15px;
+    margin-top: 20px;
+    /*float: left;*/
+}
+
+#track-buttons{
+    display: flex;
+    float: right;
+    margin-top: -20px;
+}

@@ -35,8 +35,8 @@ namespace TPO_Lab1
             builder.RegisterConverters();
             builder.RegisterGenerators();
             builder.RegisterMenuFunctions();
-            builder.RegisterUtils();
-            builder.RegisterInstance(spotifyApi);
+            builder.RegisterUtils(); 
+            builder.RegisterInstance(spotifyApi); 
             _container = builder.Build();
 
             ShowMainMenu();

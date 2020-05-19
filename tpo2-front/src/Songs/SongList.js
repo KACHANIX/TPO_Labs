@@ -4,7 +4,6 @@ import Song from "./Song";
 class SongList extends Component {
     constructor(props){
         super(props);
-        var a = props.songs[0];
         console.log(props.songs)
     }
     render() {

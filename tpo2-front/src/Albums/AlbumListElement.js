@@ -11,7 +11,7 @@ class AlbumListElement extends Component {
         super(props);
         this.state = {
             redirect: false
-        }
+        };
         this.saveAlbum = this.saveAlbum.bind(this);
         this.removeAlbum = this.removeAlbum.bind(this)
         this.redirectToAlbum = this.redirectToAlbum.bind(this)

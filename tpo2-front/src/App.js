@@ -7,23 +7,30 @@ import {
 } from "react-router-dom";
 import Songs from './Songs/Songs.js';
 import './App.css';
-import Playlists from "./Playlists";
+import Playlists from "./Playlists/Playlists";
 import Artists from "./Artists/Artists";
 import Albums from "./Albums/Albums";
 import MainPage from "./MainPage";
 import Album from "./Albums/Album";
 import Artist from "./Artists/Artist";
+import Playlist from "./Playlists/Playlist";
 
 var tokenStr = 'token=';
-var token = tokenStr + 'BQBd7In-IpKJG-gYjy17jHTEuNx24Z4_IJmVxskhGP0Yhq7gmNYufXUN7bTIUjEAK68CNMwhkgubaUSxjO4w8fUCn1f4w-DNVQ-gXha_7q_VqRrPNWGHeJZImRS5_aBeW96DT9nDza579VLB8j-KAvSBzkKimvsWidQfcjh2XHrd67yYaEcRwq6OGN-mZXGyQ3TLUPf9uwQOmB098RBmhA0e3l9VkAKMrUD_QkejRtl_-uQcVR7f4ay35LN41ddeILFys_kDF5-GwXSIPhfh-JQ5E-EL';
+var token = tokenStr + 'BQBmr670iSTSHMfGzcamPvq11mzFfsJh_o2d8UZNlddpB622nkm3E53TsHdGlf4E9F9LbnU5-N-SJu6ikeLtsq4X8zMIXl4sScK-C1-0Y2rfKG5SdkUaFSpptgna3d6sMk7XR68swAt5oxBiOdWG0f6qdpSjpsRIqYV5-76LpPf-hAFL9AMgO74HJ-oxRamjvQeDWbGaQaESLcM4MuehXDLhN_OK1gbFHEJ0ZK8MZzSGwnx0tv_AoCGbhUsKcQfxtRtgJ4a-xVf00kljHDXijdBfb0h5';
 
 class App extends Component {
     constructor() {
         super();
         const params = this.getHashParams(); //params.access_token
-        // console.log('foo');
-        // console.log(params.access_token);
-        document.cookie = token;
+        console.log(document.cookie);
+        console.log(params.access_token);
+        if (document.cookie == '' && params.access_token == undefined) {
+            window.location.href = 'http://localhost:8888/login/';
+            return;
+        }
+
+        if (params.access_token != undefined)
+            document.cookie = tokenStr + params.access_token;
     }
 
     getHashParams() {
@@ -50,6 +57,7 @@ class App extends Component {
                         <Route exact path="/albums" component={Albums}/>
                         <Route path='/albums/album/:albumId' component={Album}/>
                         <Route path='/artists/artist/:artistId' component={Artist}/>
+                        <Route path='/playlists/playlist/:playlistId' component={Playlist}/>
                     </Switch>
                 </Router>
             </div>);

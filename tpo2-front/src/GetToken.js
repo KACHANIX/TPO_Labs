@@ -4,8 +4,8 @@ function api(){
     let spotify = new SpotifyWebApi();
 
     let a = document.cookie;
-    // console.log('SUKA');
-    // console.log(a.substring(6));
+    console.log('TOKEN');
+    console.log(a);
     spotify.setAccessToken(a.substring(6));
     return spotify;
 }

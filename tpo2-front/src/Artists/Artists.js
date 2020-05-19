@@ -12,6 +12,8 @@ import ArtistList from "./ArtistList";
 class Artists extends Component {
     constructor() {
         super();
+        this.savedArtists = this.savedArtists.bind(this);
+        this.mostArtists = this.mostArtists.bind(this);
     }
 
     async savedArtists(){

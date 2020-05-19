@@ -1,0 +1,7 @@
+.playlist-list-element {
+    width: 400px;
+    border: 6px solid #4FC3F7;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    padding-bottom: 15px;
+}

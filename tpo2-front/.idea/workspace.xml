@@ -5,29 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="882c7bc9-825e-4a76-a2b9-be9e8a7ed41f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Albums/Album.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Albums/AlbumList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Albums/AlbumListElement.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Albums/AlbumListElement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Albums/Albums.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artists/Artist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artists/ArtistList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artists/ArtistListElement.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artists/ArtistListElement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Artists/Artists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/AlbumUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/ArtistUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/TimeConverter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/SKOCH.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/SKOCH.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playlists/Playlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playlists/PlaylistList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playlists/PlaylistListElement.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playlists/PlaylistListElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/PlaylistUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Albums.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Albums/AlbumListElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Albums/AlbumListElement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Artists.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Song.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Songs/Song.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Song.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Songs/Song.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Songs/SongList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Songs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Songs/Songs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/SongUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/SongUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Artists/Artists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Artists/Artists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GetToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GetToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Playlists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Playlists/Playlists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Songs/SongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Songs/SongList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,25 +27,98 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="408">
+                    <caret line="30" column="85" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="85" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Albums/AlbumList.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="51">
+                    <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="34">
+                    <caret line="2" column="30" selection-start-column="21" selection-end-line="5" selection-end-column="25" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/Albums/Album.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="289">
+                    <caret line="17" selection-start-line="17" selection-end-line="18" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/Albums/Albums.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="187">
+                    <caret line="20" selection-start-line="20" selection-end-line="21" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Songs/SongList.js">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Artists/Artist.js">
+        <entry file="file://$PROJECT_DIR$/src/GetToken.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+            <state relative-caret-position="102">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Songs/SongList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -65,10 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Artists/ArtistList.js">
+        <entry file="file://$PROJECT_DIR$/src/Playlists/Playlists.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="227">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,10 +139,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/ArtistUtils.js">
+        <entry file="file://$PROJECT_DIR$/src/Playlists/PlaylistListElement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="20" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Playlists/Playlist.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/PlaylistUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="56" column="68" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -117,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/AuthContext.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/MainPage.js" />
-        <option value="$PROJECT_DIR$/src/GetToken.js" />
         <option value="$PROJECT_DIR$/src/Utils/Song.css" />
         <option value="$PROJECT_DIR$/src/Song.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
@@ -135,16 +220,23 @@
         <option value="$PROJECT_DIR$/src/Utils/AlbumUtils.js" />
         <option value="$PROJECT_DIR$/src/Artists.js" />
         <option value="$PROJECT_DIR$/src/Artists/ArtistList.js" />
-        <option value="$PROJECT_DIR$/src/Artists/Artists.js" />
         <option value="$PROJECT_DIR$/src/Artists/ArtistListElement.css" />
         <option value="$PROJECT_DIR$/src/Albums/AlbumListElement.css" />
-        <option value="$PROJECT_DIR$/src/Albums/AlbumListElement.js" />
         <option value="$PROJECT_DIR$/src/Artists/ArtistListElement.js" />
         <option value="$PROJECT_DIR$/src/Albums/Album.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Utils/ArtistUtils.js" />
-        <option value="$PROJECT_DIR$/src/Songs/SongList.js" />
         <option value="$PROJECT_DIR$/src/Artists/Artist.js" />
+        <option value="$PROJECT_DIR$/src/Artists/Artists.js" />
+        <option value="$PROJECT_DIR$/src/Albums/AlbumListElement.js" />
+        <option value="$PROJECT_DIR$/src/Playlists/PlaylistList.js" />
+        <option value="$PROJECT_DIR$/src/Playlists/PlaylistListElement.js" />
+        <option value="$PROJECT_DIR$/src/Playlists/PlaylistListElement.css" />
+        <option value="$PROJECT_DIR$/src/Playlists/Playlists.js" />
+        <option value="$PROJECT_DIR$/src/Playlists/Playlist.js" />
+        <option value="$PROJECT_DIR$/src/Songs/SongList.js" />
+        <option value="$PROJECT_DIR$/src/Utils/PlaylistUtils.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/GetToken.js" />
       </list>
     </option>
   </component>
@@ -191,6 +283,12 @@
               <item name="tpo2-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="tpo2-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Playlists" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tpo2-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tpo2-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Songs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -224,6 +322,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SKOCH\source\repos\TPO_Labs\tpo2-front\src\Playlists" />
       <recent name="C:\Users\SKOCH\source\repos\TPO_Labs\tpo2-front\src\Artists" />
       <recent name="C:\Users\SKOCH\source\repos\TPO_Labs\tpo2-front\src\Albums" />
       <recent name="C:\Users\SKOCH\source\repos\TPO_Labs\tpo2-front\src\Songs" />
@@ -274,12 +373,12 @@
       <workItem from="1589736758594" duration="1041000" />
       <workItem from="1589738013868" duration="3509000" />
       <workItem from="1589806247700" duration="23316000" />
-      <workItem from="1589878577418" duration="19167000" />
+      <workItem from="1589878577418" duration="24381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65528000" />
+    <option name="totallyTimeSpent" value="70742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -349,16 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Playlists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -370,13 +459,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GetToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -418,19 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/TimeConverter.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/AlbumUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Artists/ArtistListElement.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -442,33 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Albums/Albums.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" selection-start-line="20" selection-end-line="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -489,43 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="17" column="308" selection-start-line="17" selection-start-column="308" selection-end-line="17" selection-end-column="308" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Artists/Artists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Albums/Album.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -562,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Songs/SongList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Artists/Artist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -579,6 +574,161 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Albums/Albums.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" selection-start-line="20" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="85" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playlists/PlaylistList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/AlbumUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Artists/Artists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Albums/AlbumListElement.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-column="21" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playlists/PlaylistListElement.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playlists/Playlists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Albums/Album.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playlists/Playlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Songs/SongList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/TimeConverter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/PlaylistUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="56" column="68" selection-start-line="56" selection-start-column="68" selection-end-line="56" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playlists/PlaylistListElement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GetToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>

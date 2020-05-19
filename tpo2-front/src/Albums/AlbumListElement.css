@@ -1,0 +1,20 @@
+.album-list-element {
+    width: 400px;
+    border: 6px solid #4FC3F7;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    padding-bottom: 15px;
+}
+
+.album-name {
+    font-size: 20px;
+}
+
+.album-author {
+    font-style: italic;
+}
+
+.album-definition:hover{
+    cursor: pointer;
+
+}

@@ -5,15 +5,17 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Songs from './Songs.js';
+import Songs from './Songs/Songs.js';
 import './App.css';
 import Playlists from "./Playlists";
-import Artists from "./Artists";
-import Albums from "./Albums";
+import Artists from "./Artists/Artists";
+import Albums from "./Albums/Albums";
 import MainPage from "./MainPage";
+import Album from "./Albums/Album";
+import Artist from "./Artists/Artist";
 
 var tokenStr = 'token=';
-var token = tokenStr + 'BQDptDfdaaZdAERMtN5FwZGQUJfWqxchoxmb1UzZt43Z4PlmhyPhbp3nUn3BdNW2NjVDMAkHlsCe2rbxmE-a792S-ALdysCGZM7SmN6Ln1mjUdsVtWKykGL04L1G05_TrTAffTSygVZj3n4KupEvG7Zq2-jmEe8SCxa8rMzBN5OCXWHpHxLLOCHrCzjqgkAOcT6JukSRb6OE-hUV9tDpv9kjNJEcesEl3TXy7LeZ616exb-jBgnVSMMFr-V_o91fhzCb0q8yJDXD_9ycU_UPINl6TRKv';
+var token = tokenStr + 'BQBd7In-IpKJG-gYjy17jHTEuNx24Z4_IJmVxskhGP0Yhq7gmNYufXUN7bTIUjEAK68CNMwhkgubaUSxjO4w8fUCn1f4w-DNVQ-gXha_7q_VqRrPNWGHeJZImRS5_aBeW96DT9nDza579VLB8j-KAvSBzkKimvsWidQfcjh2XHrd67yYaEcRwq6OGN-mZXGyQ3TLUPf9uwQOmB098RBmhA0e3l9VkAKMrUD_QkejRtl_-uQcVR7f4ay35LN41ddeILFys_kDF5-GwXSIPhfh-JQ5E-EL';
 
 class App extends Component {
     constructor() {
@@ -43,9 +45,11 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={MainPage}/>
                         <Route path="/songs" component={Songs}/>
-                        <Route path="/playlists" component={Playlists}/>
-                        <Route path="/artists" component={Artists}/>
-                        <Route path="/albums" component={Albums}/>
+                        <Route exact path="/playlists" component={Playlists}/>
+                        <Route exact path="/artists" component={Artists}/>
+                        <Route exact path="/albums" component={Albums}/>
+                        <Route path='/albums/album/:albumId' component={Album}/>
+                        <Route path='/artists/artist/:artistId' component={Artist}/>
                     </Switch>
                 </Router>
             </div>);

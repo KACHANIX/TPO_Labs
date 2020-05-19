@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-import api from "./GetToken";
-import './Song.css'
+import api from "../GetToken";
+import './Song.css';
+let Api = api();
+
 class Song extends Component {
     constructor(props) {
         super(props);
@@ -9,22 +11,20 @@ class Song extends Component {
     }
 
     async saveTrack(event) {
-        let Api = api();
         await Api.addToMySavedTracks([this.props.id]);
     }
 
     async removeTrack(event) {
-        let Api = api();
         await Api.removeFromMySavedTracks([this.props.id]);
     }
 
     render() {
         return (
-            <div id='song'>
-                <div id='track-def'>
+            <div class='song'>
+                <div class='track-def'>
                     {this.props.name} - {this.props.artist} {this.props.duration}
                 </div>
-                <div id='track-buttons'>
+                <div class='track-buttons'>
                     <button onClick={this.saveTrack}>Save Track</button>
                     <button onClick={this.removeTrack}>Unsave Track</button>
                 </div>

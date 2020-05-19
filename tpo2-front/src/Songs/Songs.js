@@ -5,8 +5,8 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import api from "./GetToken"
-import {getRecentTracks, getSavedTracks, getTopTracks} from "./Utils/SongUtils";
+import api from "../GetToken"
+import {getRecentTracks, getSavedTracks, getTopTracks} from "../Utils/SongUtils";
 import SongList from "./SongList";
 import * as ReactDOM from "react-dom";
 
@@ -29,7 +29,7 @@ class Songs extends Component {
         ReactDOM.render(<SongList name='asd' songs={asd}/>, document.getElementById('songList'));
     }
 
-    mostTracks(event) {
+    async mostTracks(event) {
         // let asd = getTopTracks();
         // console.log(asd)
     }

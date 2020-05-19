@@ -1,4 +1,4 @@
-#song{
+.song{
     margin-top: 20px;
     align-content: center;
     width: 1000px;
@@ -7,7 +7,7 @@
     border-radius: 20px;
 }
 
-#track-def{
+.track-def{
     font-size: 20px;
     display: flex;
     margin-left: 15px;
@@ -15,7 +15,7 @@
     /*float: left;*/
 }
 
-#track-buttons{
+.track-buttons{
     display: flex;
     float: right;
     margin-top: -20px;

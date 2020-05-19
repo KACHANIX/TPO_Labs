@@ -1,21 +1,21 @@
 import React, {Component} from "react";
 import api from "../GetToken";
 import './Song.css';
-let Api = api();
+import {addSongToSaved, removeSongFromSaved} from "../Utils/SongUtils";
 
 class Song extends Component {
     constructor(props) {
         super(props);
-        this.saveTrack=this.saveTrack.bind(this);
-        this.removeTrack=this.removeTrack.bind(this);
+        this.saveTrack = this.saveTrack.bind(this);
+        this.removeTrack = this.removeTrack.bind(this);
     }
 
     async saveTrack(event) {
-        await Api.addToMySavedTracks([this.props.id]);
+        await addSongToSaved(this.props.id);
     }
 
     async removeTrack(event) {
-        await Api.removeFromMySavedTracks([this.props.id]);
+        await removeSongFromSaved(this.props.id);
     }
 
     render() {

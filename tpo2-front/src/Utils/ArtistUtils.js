@@ -40,22 +40,30 @@ export async function getArtistsAlike(artistId) {
     });
     return array;
 }
+
 export async function getArtistsAlbums(artistId) {
     let array = [];
     await Api.getArtistAlbums(artistId).then(function (data) {
-        // console.log(data);
         array = data.items;
     });
     return array;
 }
+
 export async function getArtistsTopTracks(artistId) {
     let array = [];
-    await Api.getArtistTopTracks(artistId,'us').then(function (data) {
-        // console.log(data);
+    await Api.getArtistTopTracks(artistId, 'us').then(function (data) {
         data.tracks.forEach(track => {
             track.duration = msToHMS(track.duration_ms);
             array.push(track);
         });
     });
     return array;
+}
+
+export async function followArtist(artistId) {
+    await Api.followArtists([artistId])
+}
+
+export async function unfollowArtist(artistId) {
+    await Api.unfollowArtists([artistId])
 }

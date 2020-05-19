@@ -1,30 +1,21 @@
 import React, {Component} from "react";
-import api from "../GetToken";
 import './AlbumListElement.css'
-import {useHistory} from "react-router-dom";
-import Redirect from "react-router-dom/es/Redirect";
-
-let Api = api();
+import {addAlbumToSaved, removeAlbumFromSaved,} from "../Utils/AlbumUtils";
 
 class AlbumListElement extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            redirect: false
-        };
         this.saveAlbum = this.saveAlbum.bind(this);
-        this.removeAlbum = this.removeAlbum.bind(this)
+        this.removeAlbum = this.removeAlbum.bind(this);
         this.redirectToAlbum = this.redirectToAlbum.bind(this)
-        // this.setRedirect = this.setRedirect.bind(this)
-        // this.renderRedirect = this.renderRedirect.bind(this)
     }
 
     async saveAlbum() {
-        await Api.addToMySavedAlbums([this.props.id])
+        await addAlbumToSaved(this.props.id);
     }
 
     async removeAlbum() {
-        await Api.removeFromMySavedAlbums([this.props.id])
+        await removeAlbumFromSaved([this.props.id]);
     }
 
     redirectToAlbum() {

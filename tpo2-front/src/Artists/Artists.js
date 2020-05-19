@@ -1,10 +1,4 @@
 import React, {Component} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 import {getMostArtists, getSavedArtists} from "../Utils/ArtistUtils";
 import * as ReactDOM from "react-dom";
 import ArtistList from "./ArtistList";
@@ -16,17 +10,14 @@ class Artists extends Component {
         this.mostArtists = this.mostArtists.bind(this);
     }
 
-    async savedArtists(){
+    async savedArtists() {
         let artists = await getSavedArtists();
-        ReactDOM.render(<ArtistList name='asd' artists={artists}/>, document.getElementById('artists-list'));
-
-        console.log(artists);
+        ReactDOM.render(<ArtistList artists={artists}/>, document.getElementById('artists-list'));
     }
-    async mostArtists(){
-        let artists = await getMostArtists();
-        ReactDOM.render(<ArtistList name='asd' artists={artists}/>, document.getElementById('artists-list'));
 
-        console.log(artists);
+    async mostArtists() {
+        let artists = await getMostArtists();
+        ReactDOM.render(<ArtistList artists={artists}/>, document.getElementById('artists-list'));
     }
 
     render() {
@@ -37,7 +28,6 @@ class Artists extends Component {
                     <b onClick={this.mostArtists} style={{marginLeft: 50}}>Most Listened Artists</b>
                 </div>
                 <div id='artists-list'>
-
                 </div>
             </div>
 

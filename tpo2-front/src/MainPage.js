@@ -3,15 +3,6 @@ import React, {Component, useContext} from "react";
 import './MainMenu.css';
 
 class MainPage extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-        const asd = this.context;
-        console.log(asd);
-    }
-
     render() {
         return (
             <div id="main-menu-block">

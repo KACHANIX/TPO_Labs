@@ -1,5 +1,4 @@
 import api from "../GetToken"
-import {async} from "q";
 import {msToHMS} from "./TimeConverter";
 
 let Api = api();
@@ -8,7 +7,6 @@ export async function getSavedAlbums() {
     let array = [];
     await Api.getMySavedAlbums().then(function (data) {
         data.items.map(el => {
-            // el.track.duration = msToHMS(el.track.duration_ms);
             array.push(el.album);
         })
     });
@@ -26,10 +24,17 @@ export async function getNewAlbums() {
 }
 export async function getAlbum(albumId) {
     let album = null;
-    await Api.getAlbum([albumId]).then(function (data) {
+    await Api.getAlbum(albumId).then(function (data) {
         album = data;
         album.tracks.items.forEach(track=>track.duration = msToHMS(track.duration_ms));
-
     });
     return album;
+}
+
+export async function addAlbumToSaved(albumId){
+    await Api.addToMySavedAlbums([albumId]);
+}
+
+export async function removeAlbumFromSaved(albumId){
+    await Api.removeFromMySavedAlbums([albumId]);
 }

@@ -41,3 +41,10 @@ export async function getTopTracks() {
     }
     return array;
 }
+
+export async function addSongToSaved(songId){
+    await Api.addToMySavedTracks([songId]);
+}
+export async function removeSongFromSaved(songId){
+    await Api.removeFromMySavedTracks([songId])
+}

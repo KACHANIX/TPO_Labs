@@ -1,14 +1,15 @@
 import React, {Component} from "react";
-import api from "../GetToken";
 import {followPlaylist, unfollowPlaylist} from "../Utils/PlaylistUtils";
 import './PlaylistListElement.css'
-class PlaylistListElement extends Component{
-    constructor(props){
+
+class PlaylistListElement extends Component {
+    constructor(props) {
         super(props);
         this.savePlaylist = this.savePlaylist.bind(this);
         this.removePlaylist = this.removePlaylist.bind(this);
         this.redirectToPlaylist = this.redirectToPlaylist.bind(this);
     }
+
     async savePlaylist() {
         await followPlaylist(this.props.id);
     }
@@ -16,12 +17,13 @@ class PlaylistListElement extends Component{
     async removePlaylist() {
         await unfollowPlaylist(this.props.id);
     }
-    redirectToPlaylist(){
+
+    redirectToPlaylist() {
         window.location.href = 'http://localhost:3000/playlists/playlist/' + this.props.id;
     }
 
     render() {
-        return(
+        return (
             <div class='playlist-list-element'>
                 <div class='playlist-definition' onClick={this.redirectToPlaylist}>
                     <div className='playlist-name'>
@@ -39,4 +41,5 @@ class PlaylistListElement extends Component{
         );
     }
 }
+
 export default PlaylistListElement;

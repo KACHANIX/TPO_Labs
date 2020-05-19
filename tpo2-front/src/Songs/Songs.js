@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 import api from "../GetToken"
 import {getRecentTracks, getSavedTracks, getTopTracks} from "../Utils/SongUtils";
 import SongList from "./SongList";
 import * as ReactDOM from "react-dom";
 
 let Api = api();
+
 class Songs extends Component {
     constructor() {
         super();
@@ -23,10 +18,8 @@ class Songs extends Component {
     }
 
     async savedTracks(event) {
-        let asd = await getSavedTracks();
-        console.log(asd);
-
-        ReactDOM.render(<SongList name='asd' songs={asd}/>, document.getElementById('songList'));
+        let songs = await getSavedTracks();
+        ReactDOM.render(<SongList songs={songs}/>, document.getElementById('songList'));
     }
 
     async mostTracks(event) {
@@ -35,8 +28,8 @@ class Songs extends Component {
     }
 
     async recentTracks(event) {
-        let asd = await getRecentTracks();
-        ReactDOM.render(<SongList name='dsa' songs={asd}/>, document.getElementById('songList'));
+        let songs = await getRecentTracks();
+        ReactDOM.render(<SongList songs={songs}/>, document.getElementById('songList'));
 
     }
 
@@ -45,11 +38,10 @@ class Songs extends Component {
             <div>
                 <div>
                     <b onClick={this.savedTracks}>Saved Tracks</b>
-                    <b style={{marginLeft:30}} onClick={this.mostTracks}>Most Played Songs</b>
-                    <b style={{marginLeft:30}} onClick={this.recentTracks}>Recently Played Songs</b>
+                    <b style={{marginLeft: 30}} onClick={this.mostTracks}>Most Played Songs</b>
+                    <b style={{marginLeft: 30}} onClick={this.recentTracks}>Recently Played Songs</b>
                 </div>
                 <div id='songList'>
-
                 </div>
             </div>
         )

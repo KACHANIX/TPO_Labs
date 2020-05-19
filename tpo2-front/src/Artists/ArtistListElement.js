@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import api from "../GetToken";
 import './ArtistListElement.css'
-
-let Api = api();
+import {followArtist, unfollowArtist} from "../Utils/ArtistUtils";
 
 class ArtistListElement extends Component {
 
@@ -14,11 +12,11 @@ class ArtistListElement extends Component {
     }
 
     async saveArtist() {
-        await Api.followArtists([this.props.id])
+        await followArtist(this.props.id)
     }
 
     async removeArtist() {
-        await Api.unfollowArtists([this.props.id])
+        await unfollowArtist(this.props.id)
     }
 
     redirectToArtist() {

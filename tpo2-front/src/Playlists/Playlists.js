@@ -1,17 +1,10 @@
 import React, {Component} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-import {getMostArtists, getSavedArtists} from "../Utils/ArtistUtils";
 import * as ReactDOM from "react-dom";
 import {getCreatedPlaylists, getFeaturedPlaylists, getSavedPlaylists} from "../Utils/PlaylistUtils";
 import PlaylistList from "./PlaylistList";
 
 
-class Playlists extends Component{
+class Playlists extends Component {
 
     constructor() {
         super();
@@ -20,28 +13,23 @@ class Playlists extends Component{
         this.featuredPlaylists = this.featuredPlaylists.bind(this);
     }
 
-    async savedPlaylists(){
+    async savedPlaylists() {
         let playlists = await getSavedPlaylists();
-        console.log(playlists);
-        ReactDOM.render(<PlaylistList name='asd' playlists={playlists}/>, document.getElementById('playlists-list'));
-        //
-        // console.log(artists);
+        ReactDOM.render(<PlaylistList playlists={playlists}/>, document.getElementById('playlists-list'));
     }
-    async createdPlaylists(){
+
+    async createdPlaylists() {
         let playlists = await getCreatedPlaylists();
-        console.log(playlists);
-        ReactDOM.render(<PlaylistList name='asd' playlists={playlists}/>, document.getElementById('playlists-list'));
-        // ReactDOM.render(<ArtistList name='asd' artists={artists}/>, document.getElementById('artists-list'));
-        //
-        // console.log(artists);
+        ReactDOM.render(<PlaylistList playlists={playlists}/>, document.getElementById('playlists-list'));
     }
-    async featuredPlaylists(){
+
+    async featuredPlaylists() {
         let playlists = await getFeaturedPlaylists();
-        console.log(playlists);
-        ReactDOM.render(<PlaylistList name='asd' playlists={playlists}/>, document.getElementById('playlists-list'));
+        ReactDOM.render(<PlaylistList playlists={playlists}/>, document.getElementById('playlists-list'));
     }
+
     render() {
-        return(
+        return (
             <div>
                 <div>
                     <b onClick={this.savedPlaylists}>Saved Playlists</b>
@@ -49,10 +37,10 @@ class Playlists extends Component{
                     <b onClick={this.featuredPlaylists} style={{marginLeft: 50}}>Featured Playlists</b>
                 </div>
                 <div id='playlists-list'>
-
                 </div>
             </div>
         )
     }
 }
+
 export default Playlists;

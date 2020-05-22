@@ -4,7 +4,7 @@ import PlaylistListElement from "./PlaylistListElement";
 class PlaylistList extends Component {
     render() {
         return(
-            <div>
+            <div id="playlists">
                 {this.props.playlists.map((playlist)=>{
                     return <PlaylistListElement name={playlist.name} artist={playlist.owner.display_name} id={playlist.id}/>
                 })}

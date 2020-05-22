@@ -11,10 +11,12 @@ class PlaylistListElement extends Component {
     }
 
     async savePlaylist() {
+        alert('Playlist saved!');
         await followPlaylist(this.props.id);
     }
 
     async removePlaylist() {
+        alert('Playlist unsaved!');
         await unfollowPlaylist(this.props.id);
     }
 

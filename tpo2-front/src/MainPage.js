@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import React, {Component, useContext} from "react";
 import './MainMenu.css';
-import api from "./GetToken";
+import {api} from "./GetToken";
 
 class MainPage extends Component {
 
@@ -14,21 +14,25 @@ class MainPage extends Component {
     }
 
     async componentDidMount() {
-
         let Api = api();
         let me = null;
         await Api.getMe().then(function (data) {
             me = data;
         });
-        console.log(me);
-
-        document.getElementById('welcome-msg').innerText = 'Welcome, ' + me.display_name + '\n Your followers : ' + me.followers.total;
+        this.setState({name: me.display_name, followers: me.followers.total});
     }
 
     render() {
         return (
             <div>
-                <div id='welcome-msg'>
+                <div>
+                    {this.state.name != '' &&
+                    <div id='welcome-msg'>
+                        Welcome, {this.state.name}.<br/>
+                        Your followers: {this.state.followers}
+                    </div>
+                    }
+
                 </div>
                 <div id="main-menu-block">
                     <div className="links-line">

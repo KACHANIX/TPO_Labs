@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import api from "../GetToken";
 import './Song.css';
 import {addSongToSaved, removeSongFromSaved} from "../Utils/SongUtils";
 
@@ -10,11 +9,13 @@ class Song extends Component {
         this.removeTrack = this.removeTrack.bind(this);
     }
 
-    async saveTrack(event) {
+    async saveTrack( ) {
+        alert('Song saved!');
         await addSongToSaved(this.props.id);
     }
 
-    async removeTrack(event) {
+    async removeTrack( ) {
+        alert('Song unsaved!');
         await removeSongFromSaved(this.props.id);
     }
 
@@ -25,8 +26,8 @@ class Song extends Component {
                     {this.props.name} - {this.props.artist} {this.props.duration}
                 </div>
                 <div class='track-buttons'>
-                    <button onClick={this.saveTrack}>Save Track</button>
-                    <button onClick={this.removeTrack}>Unsave Track</button>
+                    <button onClick={this.saveTrack}>Save Song</button>
+                    <button onClick={this.removeTrack}>Unsave Song</button>
                 </div>
             </div>
         )

@@ -14,23 +14,21 @@ import MainPage from "./MainPage";
 import Album from "./Albums/Album";
 import Artist from "./Artists/Artist";
 import Playlist from "./Playlists/Playlist";
-
-var tokenStr = 'token=';
-var token = tokenStr + 'BQBmr670iSTSHMfGzcamPvq11mzFfsJh_o2d8UZNlddpB622nkm3E53TsHdGlf4E9F9LbnU5-N-SJu6ikeLtsq4X8zMIXl4sScK-C1-0Y2rfKG5SdkUaFSpptgna3d6sMk7XR68swAt5oxBiOdWG0f6qdpSjpsRIqYV5-76LpPf-hAFL9AMgO74HJ-oxRamjvQeDWbGaQaESLcM4MuehXDLhN_OK1gbFHEJ0ZK8MZzSGwnx0tv_AoCGbhUsKcQfxtRtgJ4a-xVf00kljHDXijdBfb0h5';
+import {getCookie, setCookie} from "./GetToken";
 
 class App extends Component {
     constructor() {
         super();
         const params = this.getHashParams(); //params.access_token
-        console.log(document.cookie);
-        console.log(params.access_token);
-        if (document.cookie == '' && params.access_token == undefined) {
+        let cookie = getCookie();
+        // console.log(params.access_token);
+        if (cookie == '' && params.access_token == undefined) {
             window.location.href = 'http://localhost:8888/login/';
             return;
         }
-
         if (params.access_token != undefined)
-            document.cookie = tokenStr + params.access_token;
+            setCookie(params.access_token)
+            // document.cookie = tokenStr + params.access_token;
     }
 
     getHashParams() {

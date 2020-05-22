@@ -31,7 +31,7 @@ class Songs extends Component {
         return (
             <div>
                 <div>
-                    <b onClick={this.savedTracks}>Saved Tracks</b>
+                    <b onClick={this.savedTracks}>Saved Songs</b>
                     <b style={{marginLeft: 30}} onClick={this.mostTracks}>Most Played Songs</b>
                     <b style={{marginLeft: 30}} onClick={this.recentTracks}>Recently Played Songs</b>
                 </div>

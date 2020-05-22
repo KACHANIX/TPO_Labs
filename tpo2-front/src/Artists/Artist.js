@@ -9,7 +9,10 @@ class Artist extends Component {
     constructor() {
         super();
         this.state = {
-            artistId: ''
+            artistId: '',
+            name: '',
+            followers: 0,
+            popularity: 0
         };
         this.artistsAlike = this.artistsAlike.bind(this);
         this.artistsAlbums = this.artistsAlbums.bind(this);
@@ -20,7 +23,12 @@ class Artist extends Component {
         this.state.artistId = this.props.match.params.artistId;
         let artist = await getArtist(this.state.artistId);
         console.log(artist);
-        document.getElementById('artist-definition').innerText = artist.name + '\nSubs: ' + artist.followers.total + '\nPopularity: ' + artist.popularity;
+        this.setState({
+            artistId: this.props.match.params.artistId,
+            name: artist.name,
+            followers: artist.followers.total,
+            popularity: artist.popularity
+        });
     }
 
     async artistsAlike() {
@@ -47,7 +55,14 @@ class Artist extends Component {
     render() {
         return (
             <div>
-                <div id='artist-definition'></div>
+                {this.state.name != '' &&
+                <div id='artist-definition'>
+                    {this.state.name}<br/>
+                    Subs: {this.state.followers}<br/>
+                    Popularity: {this.state.popularity}
+                </div>
+                }
+
                 <div>
                     <b onClick={this.artistsAlike}>Artists Like This</b>
                     <b onClick={this.artistsAlbums} style={{marginLeft: 30}}>Albums</b>

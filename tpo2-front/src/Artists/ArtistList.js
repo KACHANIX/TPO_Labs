@@ -4,7 +4,7 @@ import ArtistListElement from "./ArtistListElement";
 class ArtistList extends Component {
     render() {
         return (
-            <div>
+            <div id="artists">
                 {this.props.artists.map((artist) => {
                     return <ArtistListElement name={artist.name} id={artist.id}/>
                 })}

@@ -1,4 +1,4 @@
-import api from "../GetToken"
+import {api} from "../GetToken"
 import {msToHMS} from "./TimeConverter";
 
 let Api = api();

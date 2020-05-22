@@ -11,10 +11,12 @@ class AlbumListElement extends Component {
     }
 
     async saveAlbum() {
+        alert('Album saved!');
         await addAlbumToSaved(this.props.id);
     }
 
     async removeAlbum() {
+        alert('Album unsaved!');
         await removeAlbumFromSaved([this.props.id]);
     }
 

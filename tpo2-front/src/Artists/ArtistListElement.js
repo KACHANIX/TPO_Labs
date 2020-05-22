@@ -12,11 +12,13 @@ class ArtistListElement extends Component {
     }
 
     async saveArtist() {
-        await followArtist(this.props.id)
+        alert('Artist saved!');
+        await followArtist(this.props.id);
     }
 
     async removeArtist() {
-        await unfollowArtist(this.props.id)
+        alert('Artist unsaved!');
+        await unfollowArtist(this.props.id);
     }
 
     redirectToArtist() {
@@ -27,10 +29,10 @@ class ArtistListElement extends Component {
     render() {
         return (
             <div class='artist-list-element'>
-                <div class='album-definition' onClick={this.redirectToArtist}>
+                <div class='artist-definition' onClick={this.redirectToArtist}>
                     {this.props.name}
                 </div>
-                <div class='album-list-buttons'>
+                <div class='artist-list-buttons'>
                     <button onClick={this.saveArtist}>Save Artist</button>
                     <button onClick={this.removeArtist}>Unsave Artist</button>
                 </div>

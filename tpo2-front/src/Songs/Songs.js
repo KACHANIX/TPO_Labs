@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
-import api from "../GetToken"
 import {getRecentTracks, getSavedTracks, getTopTracks} from "../Utils/SongUtils";
 import SongList from "./SongList";
 import * as ReactDOM from "react-dom";
 
-let Api = api();
-
 class Songs extends Component {
     constructor() {
         super();
-        Api.getMe().then(function (data) {
-            console.log(data);
-        });
         this.savedTracks = this.savedTracks.bind(this);
         this.mostTracks = this.mostTracks.bind(this);
         this.recentTracks = this.recentTracks.bind(this);

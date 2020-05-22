@@ -5,3 +5,7 @@
     margin: 30px auto 0;
     padding-bottom: 15px;
 }
+
+.playlist-definition:hover{
+    cursor: pointer;
+}

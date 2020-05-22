@@ -4,10 +4,8 @@ export function msToHMS(ms) {
             return ('000' + num).slice(size * -1);
         },
         time = parseFloat(seconds).toFixed(3),
-        hours = Math.floor(time / 60 / 60),
         minutes = Math.floor(time / 60) % 60,
-        seconds1 = Math.floor(time - minutes * 60),
-        milliseconds = time.slice(-3);
+        seconds1 = Math.floor(time - minutes * 60);
 
     return pad(minutes, 2) + ':' + pad(seconds1, 2);
 }

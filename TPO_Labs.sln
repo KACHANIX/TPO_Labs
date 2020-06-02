@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPO_Lab1_Tests", "TPO_Lab1_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPO_Lab2_Tests", "TPO_Lab2_Tests\TPO_Lab2_Tests.csproj", "{260F3B4F-AF5A-43BC-BAF0-70940F5759F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPO_Lab3_Backend", "TPO_Lab3_Backend\TPO_Lab3_Backend.csproj", "{9CDB5723-7D5C-4EED-91E8-C97DC4351C22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{260F3B4F-AF5A-43BC-BAF0-70940F5759F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260F3B4F-AF5A-43BC-BAF0-70940F5759F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260F3B4F-AF5A-43BC-BAF0-70940F5759F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CDB5723-7D5C-4EED-91E8-C97DC4351C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CDB5723-7D5C-4EED-91E8-C97DC4351C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CDB5723-7D5C-4EED-91E8-C97DC4351C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CDB5723-7D5C-4EED-91E8-C97DC4351C22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

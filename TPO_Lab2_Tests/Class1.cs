@@ -29,7 +29,7 @@ namespace TPO_Lab2_Tests
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
         }
 
-        [Test, Description("Check if main page loads correctly.")]
+        [Test]
         public void MainPage_LoadsCorrectly()
         {
             _driver.Url = MainPageUrl;

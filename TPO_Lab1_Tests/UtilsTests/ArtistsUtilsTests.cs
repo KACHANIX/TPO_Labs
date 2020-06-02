@@ -33,7 +33,7 @@ namespace TPO_Lab1_Tests.UtilsTests
             var topArtists = _artistsUtils.GetTopArtists();
             Assert.AreNotEqual(0, topArtists.Count);
         }
-        [TestMethod = "name test"]
+        [TestMethod]
         public void GetTopArtists_ReturnsCorrectList()
         {
             var topArtists = _artistsUtils.GetTopArtists();

@@ -16,7 +16,7 @@ export function api(){
 // for correct test
 export function getCookie(){
     let tokenStr = 'token=';
-    return tokenStr + 'BQBVbyDV1MDddDKVJH9D_vgYoqVlJCYbIYxoFolIMxFJmtdcKW5jLkoTq61hIR_ZBZQi_QkMnIgnHvS8m1X8YnDTnkODn9aoZlTf_JdWmNqdWylhjvLhz_rEdEVUZBxsai1D_pAFsS9GVaMT2JEVqvmmsgQy9mm6gZmHjd_NXvh53Sh-GtJFZgfRlDPrFkAwqyd9cDEStCcNiOfweeQSilWZXVh3JBfD1kJiGHTtBwJoL6DfkVa2JGrygYY1HY0_wuPzpkgtKxkW5k9z-u8e-W0fJmEV';
+    return tokenStr + 'BQBhGIZptgV2wwzZCP21rc2dHMc3VwOwfhyM0kbyfPfhXbK3mxUDKQ6SQH3cSOYOU-grUQnrT_DRGXRwTAscxhzWvczN2zhgprkoAdfGHRbMT1E7xt5JfDkPvZkvjuz7p-oZvq2UFF0os_nkG_Zp8e9j4YdueK4Syx_9VnohagXZQSxIYHP7QHKng310aCp-CyWvSaQ8mlVTRNZ06VCLQiNe0PMxJq2MfGq6IBNQPjsfG6CwjVGA6JedVYQW5TaFwZWPhAE5vr9sjV9ohO4EEgoL1LMx';
 }
 
 export function setCookie(token) {

@@ -1,4 +1,4 @@
-﻿namespace TPO_Lab3_Backend.Entities
+﻿namespace TPO_Lab3_Mobile.Entities
 {
     public class StringCarrier
     {

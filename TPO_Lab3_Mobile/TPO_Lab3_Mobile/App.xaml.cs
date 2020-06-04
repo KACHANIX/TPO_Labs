@@ -10,7 +10,7 @@ namespace TPO_Lab3_Mobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage()) { BackgroundColor = Color.FromHex("B6B6B4") };
         }
 
         protected override void OnStart()

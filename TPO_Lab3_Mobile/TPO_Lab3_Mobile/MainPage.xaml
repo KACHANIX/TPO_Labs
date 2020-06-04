@@ -9,20 +9,5 @@
             x:Class="TPO_Lab3_Mobile.MainPage">
 
     <tpoLab3Mobile:MainAlmsgivingsPage />
-    <tpoLab3Mobile:MainBearersPage />
-    <!-- <ContentPage Title="Almsgivings"> -->
-    <!--     <ContentPage.Content> -->
-    <!--         <StackLayout> -->
-    <!--             <Label Text="Almsgivings"></Label> -->
-    <!--         </StackLayout> -->
-    <!--     </ContentPage.Content> -->
-    <!-- </ContentPage> -->
-    <!-- <ContentPage Title="Bearers"> -->
-    <!--     <ContentPage.Content> -->
-    <!--         <StackLayout> -->
-    <!--             <Label Text="Bearers"></Label> -->
-    <!--         </StackLayout> -->
-    <!--     </ContentPage.Content> -->
-    <!-- </ContentPage> -->
-
+    <tpoLab3Mobile:MainBearersPage /> 
 </TabbedPage>

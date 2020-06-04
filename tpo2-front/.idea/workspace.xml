@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="882c7bc9-825e-4a76-a2b9-be9e8a7ed41f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../TPO_Lab2_Tests/Class1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab2_Tests/Class1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GetToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GetToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Backend/Entities/AlmsgivingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Backend/Entities/AlmsgivingEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Backend/Services/AlmsgivingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Backend/Services/AlmsgivingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/Entities/AlmsgivingEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/Entities/AlmsgivingEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/Entities/AlmsgivingsEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/Entities/AlmsgivingsEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainAlmsgivingsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainAlmsgivingsPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainAlmsgivingsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainAlmsgivingsPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/TPO_Lab3_Mobile.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TPO_Lab3_Mobile/TPO_Lab3_Mobile/TPO_Lab3_Mobile.csproj" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Artists/Artist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="456">
+              <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -44,7 +50,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Artists/Artists.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="272">
               <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -56,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Artists/ArtistList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="119">
               <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -68,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="595">
               <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -80,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Artists/ArtistListElement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="357">
               <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -92,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
+            <state relative-caret-position="612">
               <caret line="52" column="71" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -104,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Playlists/Playlists.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="51">
               <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -339,15 +345,15 @@
       <workItem from="1590141852773" duration="19575000" />
       <workItem from="1590227263195" duration="769000" />
       <workItem from="1590233926946" duration="3062000" />
+      <workItem from="1591283854821" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96542000" />
+    <option name="totallyTimeSpent" value="96545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18071654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -623,9 +629,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GetToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="307" selection-start-line="18" selection-start-column="307" selection-end-line="18" selection-end-column="307" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Artists/Artists.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="272">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -635,7 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Artists/ArtistList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="119">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -645,7 +658,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
+        <state relative-caret-position="595">
           <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -653,10 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Playlists/Playlists.js">
+    <entry file="file://$PROJECT_DIR$/src/Artists/ArtistListElement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="357">
+          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -665,7 +678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
+        <state relative-caret-position="612">
           <caret line="52" column="71" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -673,27 +686,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Artists/ArtistListElement.js">
+    <entry file="file://$PROJECT_DIR$/src/Playlists/Playlists.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="51">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GetToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="307" selection-start-line="18" selection-start-column="307" selection-end-line="18" selection-end-column="307" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Artists/Artist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="456">
+          <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

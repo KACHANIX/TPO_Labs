@@ -36,7 +36,8 @@ namespace TPO_Lab3_Backend.Services
             var alm = _almsgivingRepository.GetAlmsgivingById(id);
             var bearer = _bearerRepository.GetBearerById((int)alm.BearerId);
             var photo = Convert.ToBase64String(File.ReadAllBytes(alm.Photo));
-            return _mapper.AlmsToAlmEntity(alm,bearer, photo);
+            var asd = _mapper.AlmsToAlmEntity(alm, bearer, photo);
+            return asd;
         }
 
         public bool AddAlms(AlmsgivingEntity alms)

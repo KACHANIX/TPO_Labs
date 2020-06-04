@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPO_Lab3_Mobile.AlmsgivingPage">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="name" FontSize="25" HorizontalOptions="Center" Grid.Row="0" Text="{Binding Name}"/>
+            <Image Grid.Row="1" x:Name="Image"/>
+            <Label x:Name="description" FontSize="15" HorizontalOptions="Center" Grid.Row="2" Text="{Binding Description}"/>
+            <Label x:Name="phone"  Grid.Row="3" HorizontalOptions="Center" Text="{Binding DisplayPhone}"/>
+            <Label x:Name="bearerNickname" Grid.Row="4" HorizontalOptions="Center" Text="{Binding BearerNickname}"/>
+            <Button x:Name="DeleteBtn" Grid.Row="5" Clicked="DeleteBtn_OnClicked" Text="Delete"/>
+        </Grid>
+        <!-- <StackLayout> -->
+        <!--     <Label Text="Particular Almsgiving Page" -->
+        <!--            VerticalOptions="CenterAndExpand" -->
+        <!--            HorizontalOptions="CenterAndExpand" /> -->
+        <!-- </StackLayout> -->
+    </ContentPage.Content>
+</ContentPage>

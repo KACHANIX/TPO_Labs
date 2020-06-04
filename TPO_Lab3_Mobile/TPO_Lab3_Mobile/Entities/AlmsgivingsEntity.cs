@@ -7,11 +7,11 @@ namespace TPO_Lab3_Mobile.Entities
         public int Id { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
 
         public override string ToString()
         {
-            return $"{Id} {Type} {Name} {Date}";
+            return $"{String.Format("{0,9}", Type)}    {String.Format("{0,20}", Name)}    {Date.ToString("dd/MM/yyyy")}";
         }
     }
 }

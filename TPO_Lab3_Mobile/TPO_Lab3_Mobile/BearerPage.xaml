@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPO_Lab3_Mobile.BearerPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="name" HorizontalOptions="Center" FontSize="25" Grid.Row="0" Text="{Binding Nickname}" />
+            <Label x:Name="phone" HorizontalOptions="Center" FontSize="15" Grid.Row="1" Text="{Binding Phone}" />
+            <ListView x:Name="ListView" VerticalOptions="StartAndExpand" Grid.Row="2" ItemsSource="{Binding Almsgivings}" ItemTapped="ListView_OnItemTapped" />
+            <Button x:Name="AddBtn" Grid.Row="3" Clicked="Add_OnClicked" Text="Add Almsgiving" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

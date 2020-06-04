@@ -8,13 +8,71 @@
              x:Class="TPO_Lab3_Mobile.MainAlmsgivingsPage"
              Title="Almsgivings">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Search : "
-                   HorizontalOptions="CenterAndExpand" />
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="11*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="FilterBtn" Text="Filter" Clicked="FilterBtn_OnClicked" Grid.Row="0" Grid.Column="0" />
+                    <Button x:Name="SortBtn" Text="Sort" Clicked="SortBtn_OnClicked" Grid.Row="0" Grid.Column="1" />
+                    <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Label Text="Search :" HorizontalOptions="CenterAndExpand" />
 
-            <SearchBar   Placeholder="Search Almsgivings by Name:" SearchButtonPressed="SearchBar_OnSearchButtonPressed" 
-                       TextChanged="SearchBar_OnTextChanged"/>
-            <ListView x:Name="ListView" ItemsSource="{Binding Alms}"></ListView>
-        </StackLayout>
+                        <SearchBar Placeholder="Search Almsgivings by Name:"
+                                   SearchButtonPressed="SearchBar_OnSearchButtonPressed"
+                                   TextChanged="SearchBar_OnTextChanged" />
+                        <ListView x:Name="ListView" ItemsSource="{Binding Alms}" ItemTapped="ListView_OnItemTapped" />
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <ContentView x:Name="overlaySort"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#C0808080"
+                         Padding="10, 0">
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" x:Name="AscBtn" Clicked="AscBtn_OnClicked" Text="Sort by Date ASC" />
+                        <Button Grid.Column="1" x:Name="DescBtn" Clicked="DescBtn_OnClicked" Text="Sort by Date DESC" />
+                    </Grid>
+                </StackLayout>
+            </ContentView>
+            <ContentView x:Name="overlayFilter"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#C0808080"
+                         Padding="10, 0">
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="ClothesBtn" Grid.Row="0" Grid.Column="0" Clicked="ClothesBtn_OnClicked" Text="Clothes" />
+                        <Button x:Name="FoodBtn" Grid.Row="0" Grid.Column="1" Clicked="FoodBtn_OnClicked" Text="Food" />
+                        <Button x:Name="FurnitureBtn" Grid.Row="1" Grid.Column="0" Clicked="FurnitureBtn_OnClicked" Text="Furniture" />
+                        <Button x:Name="OtherBtn"  Grid.Row="1" Grid.Column="1" Clicked="OtherBtn_OnClicked" Text="Other" />
+                    </Grid>
+                </StackLayout>
+            </ContentView>
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

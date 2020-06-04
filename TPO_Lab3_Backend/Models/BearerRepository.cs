@@ -26,14 +26,22 @@ namespace TPO_Lab3_Backend.Models
             return !_context.Bearer.Any(b => b.Nickname == nickname);
         }
 
-        public bool Authorize(Bearer bearer)
+        public int Authorize(Bearer bearer)
         {
-            return _context.Bearer.Any(b => b.Nickname == bearer.Nickname && b.Password == bearer.Password);
+            bool bearerExists =
+                _context.Bearer.Any(b => b.Nickname == bearer.Nickname && b.Password == bearer.Password);
+            if (bearerExists)
+            {
+                var a = _context.Bearer.First(b => b.Nickname == bearer.Nickname && b.Password == bearer.Password);
+                return a.Id;
+            }
+            return 0;
         }
-        public void RegisterNewBearer(Bearer bearer)
+        public int RegisterNewBearer(Bearer bearer)
         {
             _context.Bearer.Add(bearer);
             _context.SaveChanges();
+            return bearer.Id;
         }
     }
 }

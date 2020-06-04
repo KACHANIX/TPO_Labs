@@ -22,17 +22,17 @@ namespace TPO_Lab3_Backend.Services
             return _bearerRepository.IsBearerNicknameFree(nickname);
         }
 
-        public bool RegisterBearer(BearerInEntity bearer)
+        public int RegisterBearer(BearerInEntity bearer)
         {
             try
             {
                 var bearerModel = _mapper.BearerEntityToModel(bearer);
-                _bearerRepository.RegisterNewBearer(bearerModel);
-                return true;
+                
+                return _bearerRepository.RegisterNewBearer(bearerModel);
             }
             catch (Exception e)
             {
-                return false;
+                return 0;
             }
         }
 
@@ -49,7 +49,7 @@ namespace TPO_Lab3_Backend.Services
            };
         }
 
-        public bool AutheticateBearer(BearerInEntity bearer)
+        public int AutheticateBearer(BearerInEntity bearer)
         {
             return _bearerRepository.Authorize(_mapper.BearerEntityToModel(bearer));
         }

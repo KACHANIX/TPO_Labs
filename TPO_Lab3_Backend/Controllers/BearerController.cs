@@ -28,13 +28,13 @@ namespace TPO_Lab3_Backend.Controllers
         }
 
         [HttpPost("add-bearer")]
-        public bool RegisterBearer(BearerInEntity bearer)
+        public int RegisterBearer(BearerInEntity bearer)
         {
             return _bearerService.RegisterBearer(bearer);
         }
 
         [HttpPost("auth")]
-        public bool Authenticate(BearerInEntity bearer)
+        public int Authenticate(BearerInEntity bearer)
         {
             return _bearerService.AutheticateBearer(bearer);
         }

@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -7,10 +8,94 @@
              x:Class="TPO_Lab3_Mobile.MainBearersPage"
              Title="Bearers">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is Bearers Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout>
+            <StackLayout>
+                <Label Text="{Binding BearerId}"/>
+            </StackLayout>
+            <ContentView x:Name="overlayWelcome"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="True"
+                         BackgroundColor="#282c34"
+                         Padding="10, 0">
+                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="SignInBtn" Text="Sign In" Grid.Column="1" Clicked="SignInBtn_OnClicked" />
+                    <Button x:Name="SignUpBtn" Text="Register" Grid.Column="2" Clicked="SignUpBtn_OnClicked" />
+                </Grid>
+            </ContentView>
+            <ContentView x:Name="overlaySign"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#282c34"
+                         Padding="10, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="SignNickName"
+                               Placeholder="Nickname goes here.." />
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="SignPassword"
+                               IsPassword="True" Placeholder="Password" />
+                        <Label x:Name="SignError" TextColor="Red" Text="There is no user with these credentials"
+                               IsVisible="False" />
+                        <Button x:Name="SignBtn" Text="Sign In" Clicked="SignBtn_OnClicked" />
+                        <Button Text="Go Back!" Clicked="Button_OnClicked" />
+                    </StackLayout>
+                </Grid>
+            </ContentView>
+            <ContentView x:Name="overlayRegister"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#282c34"
+                         Padding="10, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="6*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegNickname"
+                               Placeholder="Choose Nickname" />
+                        <Label TextColor="Red" x:Name="RegNicknameError"
+                               Text="This one is incorrect or already taken. Choose another nickname."
+                               IsVisible="False" />
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPassword"
+                               Placeholder="Choose Password" IsPassword="True" />
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPasswordConfirmation"
+                               Placeholder="Repeat Password" IsPassword="True" />
+                        <Label TextColor="Red" x:Name="RegPasswordError" Text="Passwords are empty or not identical, try again."
+                               IsVisible="False" />
+                        <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPhone"
+                               Placeholder="Input your phone here"/>
+                        <Label TextColor="Red" x:Name="RegPhoneError" Text="Phone incorrect, try again."
+                               IsVisible="False" />
+                        <Button x:Name="RegBtn" Text="Register" Clicked="RegBtn_OnClicked" />
+                        <Button Text="Go Back!" Clicked="Button_OnClicked" />
+                    </StackLayout>
+                </Grid>
+            </ContentView>
+        </AbsoluteLayout>
+        <!-- <StackLayout> -->
+        <!--     <Label Text="This is Bearers Page!" -->
+        <!--         VerticalOptions="CenterAndExpand"  -->
+        <!--         HorizontalOptions="CenterAndExpand" /> -->
+        <!-- </StackLayout> -->
     </ContentPage.Content>
 </ContentPage>

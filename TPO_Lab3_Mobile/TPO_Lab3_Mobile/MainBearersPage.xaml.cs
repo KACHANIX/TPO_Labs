@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics.Contracts;
 using TPO_Lab3_Mobile.Entities;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,13 +10,47 @@ namespace TPO_Lab3_Mobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainBearersPage : ContentPage
     {
-        public int BearerId { get; set; }
-
+        private int _bearerId;
+        public string Nickname { get; set; }
+        public string Phone { get; set; }
+        public ObservableCollection<AlmsgivingsEntity> Almsgivings { get; set; }
         public MainBearersPage()
         {
+
             InitializeComponent();
+            if (CurrentUser.CurrentId != 0)
+            {
+                _bearerId = CurrentUser.CurrentId;
+                overlayWelcome.IsVisible = false;
+                AddBtn.IsVisible = true;
+                Update();
+            } 
+
             BindingContext = this;
         }
+
+        private void Update()
+        {
+            var asd = HttpService.Get<BearerProfile>(Links.BearerLink + $"get-profile/{_bearerId}");
+            Nickname = asd.Nickname;
+            Phone = asd.Phone;
+            Almsgivings = new ObservableCollection<AlmsgivingsEntity>(asd.Almsgivings);
+            name.Text = asd.Nickname;
+            phone.Text = asd.Phone;
+            ListView.ItemsSource = asd.Almsgivings;
+        }
+
+        private async void Add_OnClicked(object sender, EventArgs e)
+        { 
+            await Navigation.PushAsync(new AddAlmsgivingPage(_bearerId, Nickname, Phone));
+        }
+
+        private async void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var itemSelected = ((AlmsgivingsEntity)((ListView)sender).SelectedItem).Id;
+            await Navigation.PushAsync(new AlmsgivingPage(itemSelected));
+        }
+
 
         private void SignInBtn_OnClicked(object sender, EventArgs e)
         {
@@ -48,16 +84,14 @@ namespace TPO_Lab3_Mobile
                 return;
             }
 
-            BearerId = answerId;
+            _bearerId = answerId;
+            CurrentUser.CurrentId = _bearerId;
+            CurrentUser.IsSigned = true;
             Update();
 
             overlaySign.IsVisible = false;
             overlayRegister.IsVisible = false;
             overlayWelcome.IsVisible = false;
-        }
-
-        private void Update()
-        {
         }
 
         private async void RegBtn_OnClicked(object sender, EventArgs e)
@@ -103,9 +137,12 @@ namespace TPO_Lab3_Mobile
                 Password = RegPassword.Text,
                 Phone = RegPhone.Text
             };
-            var answer = await HttpService.Post<int, BearerInEntity>(bearerIn, Links.BearerLink + "add-bearer");
-            
-            BearerId = answer;
+            var answerId = await HttpService.Post<int, BearerInEntity>(bearerIn, Links.BearerLink + "add-bearer");
+
+            _bearerId = answerId;
+
+            CurrentUser.CurrentId = _bearerId;
+            CurrentUser.IsSigned = true;
             Update();
 
             overlaySign.IsVisible = false;

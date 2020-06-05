@@ -179,5 +179,11 @@ namespace TPO_Lab3_Mobile
             overlayFilter.IsVisible = false;
             Update();
         }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            overlaySort.IsVisible = false;
+            overlayFilter.IsVisible = false;
+        }
     }
 }

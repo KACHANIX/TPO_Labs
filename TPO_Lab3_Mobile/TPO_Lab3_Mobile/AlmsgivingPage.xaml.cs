@@ -70,10 +70,20 @@ namespace TPO_Lab3_Mobile
             }
         }
 
-        private async void DeleteBtn_OnClicked(object sender, EventArgs e)
+        private   void DeleteBtn_OnClicked(object sender, EventArgs e)
         {
+            overlayDelete.IsVisible = true;
+        }
+
+        private async void DeleteConfirmBtn_OnClicked(object sender, EventArgs e)
+        { 
             HttpService.Get<bool>(Links.AlmsLink + $"delete/{_id}");
             await Navigation.PopAsync();
+        }
+
+        private void GoBackButton_OnClicked(object sender, EventArgs e)
+        {
+            overlayDelete.IsVisible = false;
         }
     }
 }

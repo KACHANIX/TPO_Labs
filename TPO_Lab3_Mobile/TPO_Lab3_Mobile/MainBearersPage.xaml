@@ -9,13 +9,23 @@
              Title="Bearers">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <StackLayout>
-                <Label Text="{Binding BearerId}"/>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All">
+
+                <Label x:Name="name" HorizontalOptions="Center" FontSize="25"
+                       Text="{Binding Nickname}" />
+                <Label x:Name="phone" HorizontalOptions="Center" FontSize="15"
+                       Text="{Binding Phone}" />
+                <ListView x:Name="ListView" VerticalOptions="StartAndExpand"
+                          ItemsSource="{Binding Almsgivings}" ItemTapped="ListView_OnItemTapped" />
+                <Button x:Name="AddBtn" IsVisible="True"
+                        Clicked="Add_OnClicked" Text="Add Almsgiving" />
+
             </StackLayout>
             <ContentView x:Name="overlayWelcome"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
-                         IsVisible="True"
+                         IsVisible="true"
                          BackgroundColor="#282c34"
                          Padding="10, 0">
                 <Grid VerticalOptions="Center" HorizontalOptions="Center">
@@ -80,10 +90,11 @@
                                Placeholder="Choose Password" IsPassword="True" />
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPasswordConfirmation"
                                Placeholder="Repeat Password" IsPassword="True" />
-                        <Label TextColor="Red" x:Name="RegPasswordError" Text="Passwords are empty or not identical, try again."
+                        <Label TextColor="Red" x:Name="RegPasswordError"
+                               Text="Passwords are empty or not identical, try again."
                                IsVisible="False" />
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPhone"
-                               Placeholder="Input your phone here"/>
+                               Placeholder="Input your phone here" />
                         <Label TextColor="Red" x:Name="RegPhoneError" Text="Phone incorrect, try again."
                                IsVisible="False" />
                         <Button x:Name="RegBtn" Text="Register" Clicked="RegBtn_OnClicked" />

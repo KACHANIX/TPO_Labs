@@ -7,26 +7,40 @@
              mc:Ignorable="d"
              x:Class="TPO_Lab3_Mobile.AlmsgivingPage">
     <ContentPage.Content>
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="5*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Label x:Name="name" FontSize="25" HorizontalOptions="Center" Grid.Row="0" Text="{Binding Name}"/>
-            <Image Grid.Row="1" x:Name="Image"/>
-            <Label x:Name="description" FontSize="15" HorizontalOptions="Center" Grid.Row="2" Text="{Binding Description}"/>
-            <Label x:Name="phone"  Grid.Row="3" HorizontalOptions="Center" Text="{Binding DisplayPhone}"/>
-            <Label x:Name="bearerNickname" Grid.Row="4" HorizontalOptions="Center" Text="{Binding BearerNickname}"/>
-            <Button x:Name="DeleteBtn" Grid.Row="5" Clicked="DeleteBtn_OnClicked" Text="Delete"/>
-        </Grid>
-        <!-- <StackLayout> -->
-        <!--     <Label Text="Particular Almsgiving Page" -->
-        <!--            VerticalOptions="CenterAndExpand" -->
-        <!--            HorizontalOptions="CenterAndExpand" /> -->
-        <!-- </StackLayout> -->
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="name" FontSize="25" HorizontalOptions="Center" Grid.Row="0" Text="{Binding Name}" />
+                    <Image Grid.Row="1" x:Name="Image" />
+                    <Label x:Name="description" FontSize="15" HorizontalOptions="Center" Grid.Row="2"
+                           Text="{Binding Description}" />
+                    <Label x:Name="phone" Grid.Row="3" HorizontalOptions="Center" FontSize="20" Text="{Binding DisplayPhone}" />
+                    <Label x:Name="bearerNickname" Grid.Row="4" FontSize="20" HorizontalOptions="Center"
+                           Text="{Binding BearerNickname}" />
+                    <Button x:Name="DeleteBtn" Grid.Row="5" Clicked="DeleteBtn_OnClicked" Text="Delete" />
+                </Grid>
+            </StackLayout>
+            <ContentView x:Name="overlayDelete"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         BackgroundColor="#C0808080"
+                         Padding="10, 0">
+                <StackLayout VerticalOptions="Center">
+                    <Label FontSize="25" TextColor="Red" HorizontalOptions="Center" Text="Confirm" />
+                    <Button x:Name="DeleteConfirmBtn" Clicked="DeleteConfirmBtn_OnClicked" Text="DELETE" />
+                    <Button Text="Go Back" Clicked="GoBackButton_OnClicked" />
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

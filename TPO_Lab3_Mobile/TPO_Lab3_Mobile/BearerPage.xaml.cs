@@ -38,10 +38,10 @@ namespace TPO_Lab3_Mobile
             await Navigation.PushAsync(new AlmsgivingPage(itemSelected));
         }
 
-        private void Add_OnClicked(object sender, EventArgs e)
-        {
-            var a = _bearerId;
-            throw new NotImplementedException(); //TODO: Add AddAlmsPage
+        private async void Add_OnClicked(object sender, EventArgs e)
+        { 
+            await Navigation.PushAsync(new AddAlmsgivingPage(_bearerId, Nickname, Phone));
+            // throw new NotImplementedException(); //TODO: Add AddAlmsPage
         }
     }
 }

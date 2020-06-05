@@ -38,8 +38,8 @@
                          IsVisible="False"
                          BackgroundColor="#C0808080"
                          Padding="10, 0">
-                <StackLayout>
-                    <Grid>
+                <StackLayout VerticalOptions="Center">
+                    <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
@@ -47,6 +47,8 @@
                         <Button Grid.Column="0" x:Name="AscBtn" Clicked="AscBtn_OnClicked" Text="Sort by Date ASC" />
                         <Button Grid.Column="1" x:Name="DescBtn" Clicked="DescBtn_OnClicked" Text="Sort by Date DESC" />
                     </Grid>
+                    <Button Text="Go Back" Clicked="Button_OnClicked"/>
+
                 </StackLayout>
             </ContentView>
             <ContentView x:Name="overlayFilter"
@@ -55,8 +57,8 @@
                          IsVisible="False"
                          BackgroundColor="#C0808080"
                          Padding="10, 0">
-                <StackLayout>
-                    <Grid>
+                <StackLayout VerticalOptions="Center">
+                    <Grid VerticalOptions="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
@@ -70,6 +72,7 @@
                         <Button x:Name="FurnitureBtn" Grid.Row="1" Grid.Column="0" Clicked="FurnitureBtn_OnClicked" Text="Furniture" />
                         <Button x:Name="OtherBtn"  Grid.Row="1" Grid.Column="1" Clicked="OtherBtn_OnClicked" Text="Other" />
                     </Grid>
+                    <Button Text="Go Back" Clicked="Button_OnClicked"/>
                 </StackLayout>
             </ContentView>
 

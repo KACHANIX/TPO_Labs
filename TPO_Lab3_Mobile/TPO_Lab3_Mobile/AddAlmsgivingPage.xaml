@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPO_Lab3_Mobile.AddAlmsgivingPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                <Entry x:Name="Name" Placeholder="Name" />
+                <Label x:Name="NameError" TextColor="Red" IsVisible="False" Text="Name is incorrect, try again." />
+                <Entry x:Name="Description" Placeholder="Description" />
+                <Label x:Name="DescriptionError" TextColor="Red" IsVisible="False"
+                       Text="Description is incorrect, try again." />
+                <Picker x:Name="Picker" SelectedIndexChanged="Picker_OnSelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>furniture</x:String>
+                        <x:String>clothes</x:String>
+                        <x:String>food</x:String>
+                        <x:String>other</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+                <Button x:Name="PhotoBtn" Text="Pick a photo" Clicked="Button_OnClicked" />
+                <Label x:Name="PhotoError" TextColor="Red" IsVisible="False" Text="Pick a photo" />
+                <Button x:Name="SubmitBtn" Text="Pick a photo" Clicked="SubmitBtn_OnClicked" />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,10 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using TPO_Lab3_Mobile.Entities;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,8 +18,7 @@ namespace TPO_Lab3_Mobile
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainAlmsgivingsPage : ContentPage
-    {
-        private readonly HttpClient _client = new HttpClient();
+    { 
         public ObservableCollection<AlmsgivingsEntity> Alms { get; set; }
         private ObservableCollection<AlmsgivingsEntity> _initialAlms;
         private string _searchString;

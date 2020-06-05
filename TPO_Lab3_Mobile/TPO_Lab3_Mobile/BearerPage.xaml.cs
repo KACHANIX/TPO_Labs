@@ -32,6 +32,13 @@ namespace TPO_Lab3_Mobile
             }
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var asd = HttpService.Get<BearerProfile>(Links.BearerLink + $"get-profile/{_bearerId}"); 
+            Almsgivings = new ObservableCollection<AlmsgivingsEntity>(asd.Almsgivings);
+        }
+
         private async void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             var itemSelected = ((AlmsgivingsEntity) ((ListView) sender).SelectedItem).Id;

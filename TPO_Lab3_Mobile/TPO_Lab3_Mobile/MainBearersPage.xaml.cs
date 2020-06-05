@@ -16,7 +16,6 @@ namespace TPO_Lab3_Mobile
         public ObservableCollection<AlmsgivingsEntity> Almsgivings { get; set; }
         public MainBearersPage()
         {
-
             InitializeComponent();
             if (CurrentUser.CurrentId != 0)
             {
@@ -27,6 +26,15 @@ namespace TPO_Lab3_Mobile
             } 
 
             BindingContext = this;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_bearerId != 0)
+            {
+                Update();
+            }
         }
 
         private void Update()

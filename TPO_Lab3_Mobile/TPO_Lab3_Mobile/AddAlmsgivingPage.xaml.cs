@@ -106,7 +106,7 @@ namespace TPO_Lab3_Mobile
                 return;
             }
 
-            if (_photo64 == "")
+            if (String.IsNullOrWhiteSpace(_photo64))
             {
                 PhotoError.IsVisible = true;
                 return;

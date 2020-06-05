@@ -20,19 +20,21 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="FilterBtn" Text="Filter" Clicked="FilterBtn_OnClicked" Grid.Row="0" Grid.Column="0" />
-                    <Button x:Name="SortBtn" Text="Sort" Clicked="SortBtn_OnClicked" Grid.Row="0" Grid.Column="1" />
+                    <Button x:Name="FilterBtn" Text="Filter" Clicked="FilterBtn_OnClicked" Grid.Row="0" Grid.Column="0" AutomationId="FilterBtn"/>
+                    <Button x:Name="SortBtn" Text="Sort" Clicked="SortBtn_OnClicked" Grid.Row="0" Grid.Column="1" AutomationId="SortBtn"/>
                     <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                         <Label Text="Search :" HorizontalOptions="CenterAndExpand" />
-
                         <SearchBar Placeholder="Search Almsgivings by Name:"
                                    SearchButtonPressed="SearchBar_OnSearchButtonPressed"
-                                   TextChanged="SearchBar_OnTextChanged" />
-                        <ListView x:Name="ListView" ItemsSource="{Binding Alms}" ItemTapped="ListView_OnItemTapped" />
+                                   TextChanged="SearchBar_OnTextChanged" 
+                                   AutomationId="SearchBar"/>
+                        <ListView x:Name="ListView" ItemsSource="{Binding Alms}" ItemTapped="ListView_OnItemTapped" 
+                                  AutomationId="ListView"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
             <ContentView x:Name="overlaySort"
+                         AutomationId="OverlaySort"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
                          IsVisible="False"
@@ -44,14 +46,15 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" x:Name="AscBtn" Clicked="AscBtn_OnClicked" Text="Sort by Date ASC" />
-                        <Button Grid.Column="1" x:Name="DescBtn" Clicked="DescBtn_OnClicked" Text="Sort by Date DESC" />
+                        <Button Grid.Column="0" x:Name="AscBtn" Clicked="AscBtn_OnClicked" Text="Sort by Date ASC" AutomationId="AscBtn"/>
+                        <Button Grid.Column="1" x:Name="DescBtn" Clicked="DescBtn_OnClicked" Text="Sort by Date DESC" AutomationId="DescBtn"/>
                     </Grid>
-                    <Button Text="Go Back" Clicked="Button_OnClicked"/>
+                    <Button Text="Go Back" Clicked="Button_OnClicked" />
 
                 </StackLayout>
             </ContentView>
             <ContentView x:Name="overlayFilter"
+                         AutomationId="OverlayFilter"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
                          IsVisible="False"
@@ -67,10 +70,10 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <Button x:Name="ClothesBtn" Grid.Row="0" Grid.Column="0" Clicked="ClothesBtn_OnClicked" Text="Clothes" />
-                        <Button x:Name="FoodBtn" Grid.Row="0" Grid.Column="1" Clicked="FoodBtn_OnClicked" Text="Food" />
-                        <Button x:Name="FurnitureBtn" Grid.Row="1" Grid.Column="0" Clicked="FurnitureBtn_OnClicked" Text="Furniture" />
-                        <Button x:Name="OtherBtn"  Grid.Row="1" Grid.Column="1" Clicked="OtherBtn_OnClicked" Text="Other" />
+                        <Button x:Name="ClothesBtn" Grid.Row="0" Grid.Column="0" Clicked="ClothesBtn_OnClicked" Text="Clothes" AutomationId="ClothesBtn" />
+                        <Button x:Name="FoodBtn" Grid.Row="0" Grid.Column="1" Clicked="FoodBtn_OnClicked" Text="Food" AutomationId="FoodBtn"/>
+                        <Button x:Name="FurnitureBtn" Grid.Row="1" Grid.Column="0" Clicked="FurnitureBtn_OnClicked" Text="Furniture" AutomationId="FurnitureBtn"/>
+                        <Button x:Name="OtherBtn"  Grid.Row="1" Grid.Column="1" Clicked="OtherBtn_OnClicked" Text="Other" AutomationId="OtherBtn"/>
                     </Grid>
                     <Button Text="Go Back" Clicked="Button_OnClicked"/>
                 </StackLayout>

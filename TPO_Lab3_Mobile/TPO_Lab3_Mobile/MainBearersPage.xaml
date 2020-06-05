@@ -13,16 +13,21 @@
                          AbsoluteLayout.LayoutFlags="All">
 
                 <Label x:Name="name" HorizontalOptions="Center" FontSize="25"
-                       Text="{Binding Nickname}" />
+                       Text="{Binding Nickname}" 
+                       AutomationId="Name"/>
                 <Label x:Name="phone" HorizontalOptions="Center" FontSize="15"
-                       Text="{Binding Phone}" />
+                       Text="{Binding Phone}" 
+                       AutomationId="Phone"/>
                 <ListView x:Name="ListView" VerticalOptions="StartAndExpand"
-                          ItemsSource="{Binding Almsgivings}" ItemTapped="ListView_OnItemTapped" />
+                          ItemsSource="{Binding Almsgivings}" ItemTapped="ListView_OnItemTapped" 
+                          AutomationId="ListView"/>
                 <Button x:Name="AddBtn" IsVisible="True"
-                        Clicked="Add_OnClicked" Text="Add Almsgiving" />
+                        Clicked="Add_OnClicked" Text="Add Almsgiving" 
+                        AutomationId="AddBtn"/>
 
             </StackLayout>
             <ContentView x:Name="overlayWelcome"
+                         AutomationId="OverlayWelcome"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
                          IsVisible="true"
@@ -35,11 +40,12 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="SignInBtn" Text="Sign In" Grid.Column="1" Clicked="SignInBtn_OnClicked" />
-                    <Button x:Name="SignUpBtn" Text="Register" Grid.Column="2" Clicked="SignUpBtn_OnClicked" />
+                    <Button x:Name="SignInBtn" Text="Sign In" Grid.Column="1" Clicked="SignInBtn_OnClicked" AutomationId="SignInBtn" />
+                    <Button x:Name="SignUpBtn" Text="Register" Grid.Column="2" Clicked="SignUpBtn_OnClicked" AutomationId="SignUpBtn"/>
                 </Grid>
             </ContentView>
             <ContentView x:Name="overlaySign"
+                         AutomationId="OverlaySign"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
                          IsVisible="False"
@@ -53,17 +59,22 @@
                     </Grid.RowDefinitions>
                     <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="SignNickName"
-                               Placeholder="Nickname goes here.." />
+                               Placeholder="Nickname goes here.." 
+                               AutomationId="SignNickname"/>
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="SignPassword"
-                               IsPassword="True" Placeholder="Password" />
+                               IsPassword="True" Placeholder="Password" 
+                               AutomationId="SignPassword"/>
                         <Label x:Name="SignError" TextColor="Red" Text="There is no user with these credentials"
-                               IsVisible="False" />
-                        <Button x:Name="SignBtn" Text="Sign In" Clicked="SignBtn_OnClicked" />
-                        <Button Text="Go Back!" Clicked="Button_OnClicked" />
+                               IsVisible="False" 
+                               AutomationId="SignError"/>
+                        <Button x:Name="SignBtn" Text="Sign In" Clicked="SignBtn_OnClicked" 
+                                AutomationId="SignBtn"/>
+                        <Button Text="Go Back!" Clicked="Button_OnClicked"/>
                     </StackLayout>
                 </Grid>
             </ContentView>
             <ContentView x:Name="overlayRegister"
+                         AutomationId="OverlayRegister"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                          AbsoluteLayout.LayoutFlags="All"
                          IsVisible="False"
@@ -82,22 +93,30 @@
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegNickname"
-                               Placeholder="Choose Nickname" />
+                               Placeholder="Choose Nickname" 
+                               AutomationId="RegNickname"/>
                         <Label TextColor="Red" x:Name="RegNicknameError"
                                Text="This one is incorrect or already taken. Choose another nickname."
-                               IsVisible="False" />
+                               IsVisible="False"
+                               AutomationId="RegNicknameError"/>
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPassword"
-                               Placeholder="Choose Password" IsPassword="True" />
+                               Placeholder="Choose Password" IsPassword="True" 
+                               AutomationId="RegPassword"/>
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPasswordConfirmation"
-                               Placeholder="Repeat Password" IsPassword="True" />
+                               Placeholder="Repeat Password" IsPassword="True" 
+                               AutomationId="RegPasswordConfirmation"/>
                         <Label TextColor="Red" x:Name="RegPasswordError"
                                Text="Passwords are empty or not identical, try again."
-                               IsVisible="False" />
+                               IsVisible="False" 
+                               AutomationId="RegPasswordError"/>
                         <Entry PlaceholderColor="AliceBlue" TextColor="AliceBlue" x:Name="RegPhone"
-                               Placeholder="Input your phone here" />
+                               Placeholder="Input your phone here" 
+                               AutomationId="RegPhone"/>
                         <Label TextColor="Red" x:Name="RegPhoneError" Text="Phone incorrect, try again."
-                               IsVisible="False" />
-                        <Button x:Name="RegBtn" Text="Register" Clicked="RegBtn_OnClicked" />
+                               IsVisible="False" 
+                               AutomationId="RegPhoneError"/>
+                        <Button x:Name="RegBtn" Text="Register" Clicked="RegBtn_OnClicked" 
+                                AutomationId="RegBtn"/>
                         <Button Text="Go Back!" Clicked="Button_OnClicked" />
                     </StackLayout>
                 </Grid>
